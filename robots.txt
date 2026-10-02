@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://masteren.github.io/HowToLiveBetter-JP/sitemap.xml

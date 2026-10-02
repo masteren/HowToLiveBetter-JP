@@ -1,0 +1,28 @@
+name: 建议补充内容
+description: 书里还没写到、你觉得值得加的主题
+labels: ["新内容"]
+body:
+  - type: markdown
+    attributes:
+      value: 这本书只收能回答「花掉什么、换回什么」的建议，来源只引期刊论文和官方文件。法律和制度只写日本现行规定；医学部分和原书《高性价比人生指南》通用的，请优先到原书提。
+  - type: input
+    id: topic
+    attributes:
+      label: 主题
+      placeholder: 比如：换工作之后在留资格要报什么
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: 想让书回答什么问题
+      description: 写具体一点，比如「该去哪个机构、要准备什么材料」。
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: 你知道的来源（可选）
+      description: 论文、法规、官方文件的链接。
+    validations:
+      required: false

@@ -11,7 +11,7 @@
 
 [![条目](https://img.shields.io/badge/%E6%9D%A1%E7%9B%AE-51%20%E6%9D%A1-18794e?style=flat-square)](#目录)
 [![证据分级](https://img.shields.io/badge/%E8%AF%81%E6%8D%AE%E5%88%86%E7%BA%A7-A%2034%20%C2%B7%20B%2016%20%C2%B7%20C%201-915930?style=flat-square)](#证据分级)
-[![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-99%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)](docs/核实记录/)
+[![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-101%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)](docs/核实记录/)
 [![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC%20BY%204.0-565a5f?style=flat-square)](#许可)
 
 ### [打开在线检索页](https://masteren.github.io/HowToLiveBetter-JP/)
@@ -80,7 +80,7 @@
 | B | 有研究支持，但说不出一个确切数字；或者只有小样本、单独一项研究撑着；制度类条目是有官方文件但具体数字由各地自治体定 |
 | C | 作者自己的经验，或者大家公认的做法，没有直接的研究文献 |
 
-全书 51 条中 A 级 34 条、B 级 16 条、C 级 1 条，另有 1 条标注了争议、2 处标注了 TODO 待核实。来源只引原始文献：期刊论文附 DOI 或 PubMed 链接，或者日本的法令原文、省厅和自治体的官方页面、WHO 等机构的报告。不引二手转述。
+全书 51 条中 A 级 34 条、B 级 16 条、C 级 1 条，另有 1 条标注了争议、0 处标注了 TODO 待核实。来源只引原始文献：期刊论文附 DOI 或 PubMed 链接，或者日本的法令原文、省厅和自治体的官方页面、WHO 等机构的报告。不引二手转述。
 
 ## 性价比档
 

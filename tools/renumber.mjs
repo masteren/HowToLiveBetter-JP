@@ -63,7 +63,10 @@ function fixLine(line, selfSec, where) {
   return line.replace(re, (all, sec, spec1, spec2, off) => {
     if (sec !== undefined) {
       const m = MAP.get(Number(sec));
-      return m ? all.replace(spec1, mapSpec(spec1, m, where)) : all;
+      // 只改「节」后面那段：直接 all.replace 会先撞上节号里相同的数字（「第 24 节第 2 条」会变成「第 104 节第 2 条」）
+      if (!m) return all;
+      const k = all.indexOf('节');
+      return all.slice(0, k) + all.slice(k).replace(spec1, mapSpec(spec1, m, where));
     }
     if (selfSec === null || !MAP.has(selfSec)) return all;
     if (CITE.test(line.slice(0, off).replace(/\s+$/, ''))) return all;

@@ -11,7 +11,7 @@
 
 [![条目](https://img.shields.io/badge/%E6%9D%A1%E7%9B%AE-133%20%E6%9D%A1-18794e?style=flat-square)](#目录)
 [![证据分级](https://img.shields.io/badge/%E8%AF%81%E6%8D%AE%E5%88%86%E7%BA%A7-A%20102%20%C2%B7%20B%2028%20%C2%B7%20C%203-915930?style=flat-square)](#证据分级)
-[![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-257%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)](docs/核实记录/)
+[![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-259%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)](docs/核实记录/)
 [![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC%20BY%204.0-565a5f?style=flat-square)](#许可)
 
 ### [打开在线检索页](https://masteren.github.io/HowToLiveBetter-JP/)

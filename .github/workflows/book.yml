@@ -10,6 +10,9 @@ on:
     branches: [main]
     paths:
       - README.md
+      - README.en.md
+      - README.ja.md
+      - en/**
       - index.html
       - og.png
       - book/**
@@ -19,6 +22,9 @@ on:
   pull_request:
     paths:
       - README.md
+      - README.en.md
+      - README.ja.md
+      - en/**
       - index.html
       - og.png
       - book/**
@@ -63,6 +69,18 @@ jobs:
         with:
           node-version: 22
       - run: node tools/check-plain.mjs
+
+  # 译文同步检查：英文译本 en/ 里每条记着译自哪一版中文，中文改了、条目增删了、stale.json 没更新，这里就红。
+  # 和上面几道一样单独一个 job，不挡电子书发布。修法：照中文重译那几条，再 node tools/check-en.mjs --stamp 节号/条号。
+  en:
+    name: 译文同步检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/check-en.mjs --check
 
   # 统计数字检查：README、index.html、og.html 里的条目数、A/B/C 数、链接数等是否和 book/ 对得上。
   # 本地 sync-stats.mjs 要记得跑才会更新，网页上直接合并的 PR 完全经过不了它。理由同上，不挡发布。

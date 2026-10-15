@@ -1,6 +1,6 @@
 // 统计对齐：改完条目跑一次。按顺序做四件事：
-// ① 重算全书的统计数字，回写 README.md、index.html、tools/og.html；
-// ② 调 check-refs.mjs 重算 docs/引用对照.md；
+// ① 重算全书的统计数字，回写 README.md（含英日两份导读页）、index.html、tools/og.html；
+// ② 调 check-refs.mjs 重算 docs/引用对照.md，再调 check-en.mjs 让英文译本跟上中文的顺序；
 // ③ 调 check-plain.mjs 查说人话，不合格只提示不中断；
 // ④ 用无头 Chrome 把 tools/og.html 重新截成 og.png。
 //
@@ -99,6 +99,18 @@ const EDITS = [
   ['README.md', '性价比段', /全书 (\d+) 条中性价比极高 \d+ 条（\d+%）、高 \d+ 条（\d+%）、一般 \d+ 条（\d+%）/g,
     `全书 ${entries} 条中性价比极高 ${ratio['极高']} 条（${pct['极高']}%）、高 ${ratio['高']} 条（${pct['高']}%）、一般 ${ratio['一般']} 条（${pct['一般']}%）`],
   ['README.md', '正文文件数', /正文按节拆成 (\d+) 个文件/g, `正文按节拆成 ${sections} 个文件`],
+  ['README.md', '节数徽章', /%E6%AD%A3%E6%96%87-(\d+)%20%E8%8A%82/g, `%E6%AD%A3%E6%96%87-${sections}%20%E8%8A%82`],
+  // 英文和日文导读页只有首屏和徽章带数字，正文仍是中文
+  ['README.en.md', '首屏条目数', /(\d+) pieces of advice across \d+ sections/g, `${entries} pieces of advice across ${sections} sections`],
+  ['README.en.md', '条目徽章', /ENTRIES-(\d+)-/g, `ENTRIES-${entries}-`],
+  ['README.en.md', '节数徽章', /SECTIONS-(\d+)-/g, `SECTIONS-${sections}-`],
+  ['README.en.md', '证据分级徽章', /A%20(\d+)%20%C2%B7%20B%20\d+%20%C2%B7%20C%20\d+/g, `A%20${grade.A}%20%C2%B7%20B%20${grade.B}%20%C2%B7%20C%20${grade.C}`],
+  ['README.en.md', '文献链接徽章', /SOURCES-(\d+)%20LINKS/g, `SOURCES-${links}%20LINKS`],
+  ['README.ja.md', '首屏条目数', /(\d+) 節・\d+ 項目/g, `${sections} 節・${entries} 項目`],
+  ['README.ja.md', '条目徽章', /%E9%A0%85%E7%9B%AE-(\d+)%20%E4%BB%B6/g, `%E9%A0%85%E7%9B%AE-${entries}%20%E4%BB%B6`],
+  ['README.ja.md', '节数徽章', /%E6%9C%AC%E6%96%87-(\d+)%20%E7%AF%80/g, `%E6%9C%AC%E6%96%87-${sections}%20%E7%AF%80`],
+  ['README.ja.md', '证据分级徽章', /A%20(\d+)%20%C2%B7%20B%20\d+%20%C2%B7%20C%20\d+/g, `A%20${grade.A}%20%C2%B7%20B%20${grade.B}%20%C2%B7%20C%20${grade.C}`],
+  ['README.ja.md', '文献链接徽章', /%E4%B8%80%E6%AC%A1%E8%B3%87%E6%96%99-(\d+)%20/g, `%E4%B8%80%E6%AC%A1%E8%B3%87%E6%96%99-${links}%20`],
   ['index.html', '五处描述', /(\d+) 条建议/g, `${entries} 条建议`],
   ['index.html', 'numberOfPages', /numberOfPages":(\d+)/g, `numberOfPages":${entries}`],
   ['index.html', '页头条目数', /\d+ 节 (\d+) 条/g, `${sections} 节 ${entries} 条`],
@@ -144,6 +156,11 @@ const runTool = name => spawnSync(process.execPath, [join(ROOT, 'tools', name)],
 console.log('');
 if (runTool('check-refs.mjs') !== 0) throw new Error('check-refs.mjs 失败');
 console.log('提交前扫一眼 docs/引用对照.md 的 diff：条号没动而「指向的条目」变了，就是被顺延撞歪的引用。');
+
+// ②½ 英文译本跟着中文重排、改条号、抄成本标签，重写 en/stale.json。中文改过的条目会列成「英文过时」，
+// 只提示不中断：中文先提交、英文随后补译是允许的，检索页会在这些条目上标「Translation outdated」
+console.log('');
+if (runTool('check-en.mjs') !== 0) throw new Error('check-en.mjs 失败');
 
 // ③ 说人话检查只提示不中断：数字已经同步完了，卡在这里反而让人以为统计没更新。CI 里它会红
 console.log('');

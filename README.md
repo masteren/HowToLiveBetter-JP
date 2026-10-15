@@ -1,5 +1,7 @@
 <div align="center">
 
+**简体中文** · [English](README.en.md) · [日本語](README.ja.md)
+
 <img src="og.png" alt="在日本的高性价比生活指南 —— 写给在日本生活的外国人" width="820">
 
 # 在日本的高性价比生活指南
@@ -9,10 +11,15 @@
 
 本书改编自 [eternity4719](https://github.com/eternity4719) 的[《高性价比人生指南》](https://github.com/eternity4719/HowToLiveBetter)。算账方式和医学部分沿用原书，法律和制度部分按日本现行规定重写。
 
-[![条目](https://img.shields.io/badge/%E6%9D%A1%E7%9B%AE-349%20%E6%9D%A1-18794e?style=flat-square)](#目录)
-[![证据分级](https://img.shields.io/badge/%E8%AF%81%E6%8D%AE%E5%88%86%E7%BA%A7-A%20221%20%C2%B7%20B%20119%20%C2%B7%20C%209-915930?style=flat-square)](#证据分级)
-[![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-686%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)](docs/核实记录/)
-[![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC%20BY%204.0-565a5f?style=flat-square)](#许可)
+<a href="https://masteren.github.io/HowToLiveBetter-JP/"><img alt="在线检索：按条件筛" src="https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%A3%80%E7%B4%A2-%E6%8C%89%E6%9D%A1%E4%BB%B6%E7%AD%9B-1f6feb?style=for-the-badge&labelColor=555"></a>
+<a href="#目录"><img alt="条目" src="https://img.shields.io/badge/%E6%9D%A1%E7%9B%AE-349%20%E6%9D%A1-18794e?style=for-the-badge&labelColor=555"></a>
+<a href="#目录"><img alt="正文" src="https://img.shields.io/badge/%E6%AD%A3%E6%96%87-26%20%E8%8A%82-0e7c86?style=for-the-badge&labelColor=555"></a>
+<a href="#证据分级"><img alt="证据分级" src="https://img.shields.io/badge/%E8%AF%81%E6%8D%AE%E5%88%86%E7%BA%A7-A%20221%20%C2%B7%20B%20119%20%C2%B7%20C%209-915930?style=for-the-badge&labelColor=555"></a>
+<br>
+<a href="docs/核实记录/"><img alt="原始文献" src="https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-686%20%E6%9D%A1%E9%93%BE%E6%8E%A5-6f42c1?style=for-the-badge&labelColor=555"></a>
+<a href="https://github.com/masteren/HowToLiveBetter-JP/releases/tag/epub-latest"><img alt="电子版：EPUB · PDF" src="https://img.shields.io/badge/%E7%94%B5%E5%AD%90%E7%89%88-EPUB%20%C2%B7%20PDF-d9480f?style=for-the-badge&labelColor=555"></a>
+<a href="#许可"><img alt="许可：CC BY 4.0" src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC%20BY%204.0-b08800?style=for-the-badge&labelColor=555"></a>
+<a href="https://github.com/eternity4719/HowToLiveBetter"><img alt="改编自：高性价比人生指南" src="https://img.shields.io/badge/%E6%94%B9%E7%BC%96%E8%87%AA-%E9%AB%98%E6%80%A7%E4%BB%B7%E6%AF%94%E4%BA%BA%E7%94%9F%E6%8C%87%E5%8D%97-565a5f?style=for-the-badge&labelColor=555"></a>
 
 ### [打开在线检索页](https://masteren.github.io/HowToLiveBetter-JP/)
 
@@ -187,11 +194,11 @@
 
 ## 正文
 
-正文按节拆成 26 个文件放在 [book/](book/)，点上面目录里的节名进入。
+正文按节拆成 26 个文件放在 [book/](book/)，点上面目录里的节名进入。全书另有英文全译，放在 [en/](en/)，入口见 [README.en.md](README.en.md)，内容以中文为准。
 
 ## 许可
 
-正文用 [CC BY 4.0](LICENSE) 发布，范围是 book/、docs/ 和本 README 的文字。代码用 [MIT](LICENSE-CODE)，范围是 tools/、index.html 和 .github/。
+正文用 [CC BY 4.0](LICENSE) 发布，范围是 book/、docs/ 和 README（含英文版、日文版）的文字。代码用 [MIT](LICENSE-CODE)，范围是 tools/、index.html 和 .github/。
 
 本书改编自 eternity4719 的《高性价比人生指南》（https://github.com/eternity4719/HowToLiveBetter ），原书正文同样以 CC BY 4.0 发布，代码以 MIT 发布。改动有三处：法律和制度部分按日本现行规定重写；新增在留资格等写给在日外国人的内容；沿用原书的条目在标题下记了对应的原书条目。
 

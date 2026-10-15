@@ -45,7 +45,7 @@ export function readBook() {
     if (a < 0 || b < 0) throw new Error(`README 里找不到 ${from} 到 ${to} 这一段`);
     return lines.slice(a, b).join('\n');
   };
-  const description = between(`# ${TITLE}`, '[![')
+  const description = between(`# ${TITLE}`, '<a href=')
     .split('\n').slice(1).map(l => l.replace(/<[^>]+>/g, '').trim()).filter(Boolean).join('');
   const frontMd = between('## 这本书想回答的问题', '## 目录');
   const contentsMd = between('## 目录', '## 正文')

@@ -48,13 +48,13 @@ html = html
   .replaceAll('<a class="title" href="./"', `<a class="title" href="${SITE}"`);
 
 // 页脚注明这是哪一版的离线副本
-const foot = '<div class="foot">';
+const foot = '<div class="foot" data-i18n="foot">';
 must(foot, '页脚');
 const commitNote = COMMIT ? `，正文提交 ${COMMIT.slice(0, 7)}` : '';
 html = html.replace(foot, `${foot}离线副本，生成于 ${STAMP}（日本时间）${commitNote}；正文会继续更新，以 <a href="${SITE}">在线版</a> 为准。<br>`);
 
 // 正文要在主脚本之前就位
-const mainScript = '\n<script>\n/* ---------- 调试面板';
+const mainScript = '\n<script>\n/* ---------- 语言';
 must(mainScript, '主脚本的开头');
 html = html.replace(mainScript, `\n<script>window.__CORPUS__=${corpusJson}</script>${mainScript}`);
 

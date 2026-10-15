@@ -112,6 +112,9 @@ mark{background:var(--mark);color:inherit;border-radius:2px;padding:0 1px}
 .nav-r{display:flex;align-items:center;gap:8px}
 .icon-btn{width:36px;height:36px;border-radius:8px;display:grid;place-items:center;color:var(--t2);transition:background .25s,color .25s}
 .icon-btn:hover{background:var(--bg-soft);color:var(--t1)}
+.icon-btn.lang{width:auto;padding:0 9px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.card-h .zh{color:var(--brand-1);font-size:13px;line-height:28px;margin-left:4px;opacity:.7}
+.card-h .zh:hover{opacity:1}
 .icon-btn svg{width:20px;height:20px;fill:currentColor}
 .switch{position:relative;width:40px;height:22px;border-radius:11px;border:1px solid var(--divider);background:var(--bg-mute);transition:border-color .25s,background .25s;flex:none;margin-left:8px}
 .switch:hover{border-color:var(--t3)}
@@ -321,14 +324,15 @@ abbr.term:hover{border-bottom-color:var(--brand-1);color:var(--brand-1)}
 <header class="nav">
   <div class="nav-in">
     <button class="icon-btn menu-btn" id="menu" aria-label="打开筛选" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></button>
-    <a class="title" href="./"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>在日本的高性价比生活指南</span></a>
+    <a class="title" href="./"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="title">在日本的高性价比生活指南</span></a>
     <label class="search">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5" stroke-linecap="round"/></svg>
       <input id="q" type="search" placeholder="搜索条目" autocomplete="off" aria-label="搜索条目">
       <kbd>/</kbd>
     </label>
     <div class="nav-r">
-      <a class="icon-btn" href="README.md" title="查看 README.md" aria-label="README"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6zm8 1.5V8h4.5zM8 12h8v1.5H8zm0 3.5h8V17H8z"/></svg></a>
+      <a class="icon-btn lang" id="lang" href="?lang=en" title="English" aria-label="English">EN</a>
+      <a class="icon-btn" id="readme-link" href="README.md" title="查看 README.md" aria-label="README"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6zm8 1.5V8h4.5zM8 12h8v1.5H8zm0 3.5h8V17H8z"/></svg></a>
       <a class="icon-btn" href="https://github.com/masteren/HowToLiveBetter-JP" target="_blank" rel="noopener" title="在 GitHub 上查看源仓库" aria-label="GitHub 仓库"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5.6 18.3 6 18.3 6c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
       <button class="switch" id="theme" aria-label="切换深色模式" title="切换深色模式"><span class="knob"><svg class="sun" viewBox="0 0 24 24"><path d="M12 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 13a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1zm8-6a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2zM5 11a1 1 0 1 1 0 2H4a1 1 0 1 1 0-2zm12.07-5.07a1 1 0 0 1 0 1.41l-.7.71a1 1 0 1 1-1.42-1.41l.71-.71a1 1 0 0 1 1.41 0zM8.05 16.95a1 1 0 0 1 0 1.41l-.7.71a1 1 0 1 1-1.42-1.41l.71-.71a1 1 0 0 1 1.41 0zm9.02 0l.7.71a1 1 0 1 1-1.41 1.41l-.71-.7a1 1 0 0 1 1.42-1.42zM6.34 5.93l.71.71a1 1 0 0 1-1.41 1.41l-.71-.7a1 1 0 0 1 1.41-1.42zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg><svg class="moon" viewBox="0 0 24 24"><path d="M12.1 22c-5.5 0-10-4.5-10-10 0-4.8 3.4-8.9 8-9.8.5-.1.9.4.7.9A8 8 0 0 0 20.9 13c.5-.2 1 .2.9.7-.9 4.7-5 8.3-9.7 8.3z"/></svg></span></button>
     </div>
@@ -339,64 +343,64 @@ abbr.term:hover{border-bottom-color:var(--brand-1);color:var(--brand-1)}
 <div class="pop" id="pop" role="tooltip" hidden><b></b><span></span></div>
 <aside class="sidebar" id="sidebar">
   <div class="group">
-    <div class="gt">章节</div>
+    <div class="gt" data-i18n="g-sec">章节</div>
     <div class="sec-links" id="f-sec" data-dim="sec"></div>
   </div>
   <div class="group">
-    <div class="gt">性价比 <small>作者判断，同口径内可比</small></div>
+    <div class="gt" data-i18n="g-ratio">性价比 <small>作者判断，同口径内可比</small></div>
     <div class="chips" data-dim="ratio">
-      <button class="chip" data-v="极高" aria-pressed="false">极高</button>
-      <button class="chip" data-v="高" aria-pressed="false">高</button>
-      <button class="chip" data-v="一般" aria-pressed="false">一般</button>
+      <button class="chip" data-v="极高" aria-pressed="false" data-i18n="r3">极高</button>
+      <button class="chip" data-v="高" aria-pressed="false" data-i18n="r2">高</button>
+      <button class="chip" data-v="一般" aria-pressed="false" data-i18n="r1">一般</button>
     </div>
   </div>
   <div class="group">
-    <div class="gt">换回什么 <small>口径，不跨口径比较</small></div>
+    <div class="gt" data-i18n="g-lens">换回什么 <small>口径，不跨口径比较</small></div>
     <div class="chips" data-dim="lens">
-      <button class="chip" data-v="死亡率" aria-pressed="false">寿命</button>
-      <button class="chip" data-v="金钱" aria-pressed="false">钱</button>
-      <button class="chip" data-v="时间" aria-pressed="false">时间精力</button>
-      <button class="chip" data-v="自由" aria-pressed="false">人身自由</button>
+      <button class="chip" data-v="死亡率" aria-pressed="false" data-i18n="l1">寿命</button>
+      <button class="chip" data-v="金钱" aria-pressed="false" data-i18n="l2">钱</button>
+      <button class="chip" data-v="时间" aria-pressed="false" data-i18n="l3">时间精力</button>
+      <button class="chip" data-v="自由" aria-pressed="false" data-i18n="l4">人身自由</button>
     </div>
   </div>
   <div class="group">
-    <div class="gt">证据等级 <small>荟萃/RCT · 有研究 · 共识</small></div>
+    <div class="gt" data-i18n="g-grade">证据等级 <small>荟萃/RCT · 有研究 · 共识</small></div>
     <div class="chips" data-dim="grade">
-      <button class="chip" data-v="A" aria-pressed="false">A 级</button>
-      <button class="chip" data-v="B" aria-pressed="false">B 级</button>
-      <button class="chip" data-v="C" aria-pressed="false">C 级</button>
+      <button class="chip" data-v="A" aria-pressed="false" data-i18n="gA">A 级</button>
+      <button class="chip" data-v="B" aria-pressed="false" data-i18n="gB">B 级</button>
+      <button class="chip" data-v="C" aria-pressed="false" data-i18n="gC">C 级</button>
     </div>
   </div>
   <div class="group">
-    <div class="gt">花钱</div>
+    <div class="gt" data-i18n="g-money">花钱</div>
     <div class="chips" data-dim="money">
-      <button class="chip" data-v="0" aria-pressed="false">不花钱</button>
-      <button class="chip" data-v="少" aria-pressed="false">少</button>
-      <button class="chip" data-v="多" aria-pressed="false">多</button>
+      <button class="chip" data-v="0" aria-pressed="false" data-i18n="m0">不花钱</button>
+      <button class="chip" data-v="少" aria-pressed="false" data-i18n="m1">少</button>
+      <button class="chip" data-v="多" aria-pressed="false" data-i18n="m2">多</button>
     </div>
   </div>
   <div class="group">
-    <div class="gt">花时间</div>
+    <div class="gt" data-i18n="g-time">花时间</div>
     <div class="chips" data-dim="time">
-      <button class="chip" data-v="少" aria-pressed="false">顺手</button>
-      <button class="chip" data-v="中" aria-pressed="false">几小时</button>
-      <button class="chip" data-v="多" aria-pressed="false">每天占用</button>
+      <button class="chip" data-v="少" aria-pressed="false" data-i18n="t0">顺手</button>
+      <button class="chip" data-v="中" aria-pressed="false" data-i18n="t1">几小时</button>
+      <button class="chip" data-v="多" aria-pressed="false" data-i18n="t2">每天占用</button>
     </div>
   </div>
   <div class="group">
-    <div class="gt">要毅力</div>
+    <div class="gt" data-i18n="g-will">要毅力</div>
     <div class="chips" data-dim="will">
-      <button class="chip" data-v="否" aria-pressed="false">不用</button>
-      <button class="chip" data-v="些" aria-pressed="false">一点</button>
-      <button class="chip" data-v="是" aria-pressed="false">很多</button>
+      <button class="chip" data-v="否" aria-pressed="false" data-i18n="w0">不用</button>
+      <button class="chip" data-v="些" aria-pressed="false" data-i18n="w1">一点</button>
+      <button class="chip" data-v="是" aria-pressed="false" data-i18n="w2">很多</button>
     </div>
   </div>
   <div class="group">
-    <label class="toggle"><input type="checkbox" id="f-dispute"> 只看标了争议的</label>
-    <label class="toggle"><input type="checkbox" id="f-todo"> 只看有待核实的</label>
-    <button class="reset" id="reset">清空筛选</button>
+    <label class="toggle"><input type="checkbox" id="f-dispute"> <span data-i18n="fdisp">只看标了争议的</span></label>
+    <label class="toggle"><input type="checkbox" id="f-todo"> <span data-i18n="ftodo">只看有待核实的</span></label>
+    <button class="reset" id="reset" data-i18n="reset">清空筛选</button>
   </div>
-  <div class="hint">
+  <div class="hint" data-i18n="hint">
     <p>章节一次只看一个，成本和等级可多选。同一组多选是「或」，不同组之间是「且」。</p>
     <p>每节内按性价比从高到低排，检索不改变顺序。</p>
     <p>正文与标签来自仓库 <a href="book/">book/</a> 下的 26 个文件，改正文即改这里。</p>
@@ -406,37 +410,94 @@ abbr.term:hover{border-bottom-color:var(--brand-1);color:var(--brand-1)}
 <main class="content">
   <div class="doc">
     <div class="doc-head">
-      <h1>在日本的高性价比生活指南</h1>
-      <p>每一条都回答两个问题：花掉什么，换回什么。</p>
-      <p>换回的算在谁头上也分档：你自己最高，其次配偶和直系亲属，再次朋友同事，陌生人最低——最低不等于零，只是回报的指望小、要连风险一起看。</p>
-      <p>不用全做：这是一份按性价比排好的备选单，不是任务清单。挑走一两条就算数，剩下的需要时再回来查——想挑省力的，左边把「花钱」选「不花钱」、「要毅力」选「不用」，剩下的就是。作者自己也没做到其中大部分。正文里带虚线的「第 X 条」可以点开，就地看那条写了什么，不用自己翻过去。</p>
-      <div class="stat" aria-live="polite">当前显示 <b id="cnt">–</b> 条，共 <span id="tot">–</span> 条</div>
-      <div class="doc-links">长文：<a href="https://github.com/masteren/HowToLiveBetter-JP/blob/main/docs/%E7%94%9F%E7%89%A9%E9%92%9F%E5%92%8C%E5%A4%9C%E7%8F%AD.md">生物钟和夜班</a></div>
-      <details class="gloss" id="gloss"><summary>看不懂的缩写和名词</summary><p>正文里带虚线的词，点一下或把鼠标放上去就有解释。全表如下。</p><dl></dl></details>
+      <h1 data-i18n="title">在日本的高性价比生活指南</h1>
+      <p data-i18n="p1">每一条都回答两个问题：花掉什么，换回什么。</p>
+      <p data-i18n="p2">换回的算在谁头上也分档：你自己最高，其次配偶和直系亲属，再次朋友同事，陌生人最低——最低不等于零，只是回报的指望小、要连风险一起看。</p>
+      <p data-i18n="p3">不用全做：这是一份按性价比排好的备选单，不是任务清单。挑走一两条就算数，剩下的需要时再回来查——想挑省力的，左边把「花钱」选「不花钱」、「要毅力」选「不用」，剩下的就是。作者自己也没做到其中大部分。正文里带虚线的「第 X 条」可以点开，就地看那条写了什么，不用自己翻过去。</p>
+      <div class="stat" aria-live="polite" data-i18n="stat">当前显示 <b id="cnt">–</b> 条，共 <span id="tot">–</span> 条</div>
+      <div class="doc-links" data-i18n="doclinks">长文：<a href="https://github.com/masteren/HowToLiveBetter-JP/blob/main/docs/%E7%94%9F%E7%89%A9%E9%92%9F%E5%92%8C%E5%A4%9C%E7%8F%AD.md">生物钟和夜班</a></div>
+      <details class="gloss" id="gloss"><summary data-i18n="gsum">看不懂的缩写和名词</summary><p data-i18n="gp">正文里带虚线的词，点一下或把鼠标放上去就有解释。全表如下。</p><dl></dl></details>
     </div>
     <div id="list">
-      <div class="status" id="status"><span id="status-t">正在读取正文 …</span><div class="bar"><i id="status-b"></i></div></div>
-      <div class="empty" id="empty" hidden>
+      <div class="status" id="status" data-i18n="status"><span id="status-t">正在读取正文 …</span><div class="bar"><i id="status-b"></i></div></div>
+      <div class="empty" id="empty" hidden data-i18n="empty">
         没有匹配的条目。去掉一个筛选条件，或换个更短的关键词。
         <div><button id="reset2">清空筛选</button></div>
       </div>
     </div>
-    <div class="foot">数字口径以条目内标注为准：死亡率、时间精力、金钱和人身自由各算各的，互不换算。来源核实过程见 <a href="https://github.com/masteren/HowToLiveBetter-JP/tree/main/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95">docs/核实记录</a>。本书改编自 eternity4719 的《<a href="https://github.com/eternity4719/HowToLiveBetter">高性价比人生指南</a>》，法律与制度部分按日本现行规定改写。正文按 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hans">CC BY 4.0</a> 发布，转载改编请署名并附原文链接。</div>
+    <div class="foot" data-i18n="foot">数字口径以条目内标注为准：死亡率、时间精力、金钱和人身自由各算各的，互不换算。来源核实过程见 <a href="https://github.com/masteren/HowToLiveBetter-JP/tree/main/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95">docs/核实记录</a>。本书改编自 eternity4719 的《<a href="https://github.com/eternity4719/HowToLiveBetter">高性价比人生指南</a>》，法律与制度部分按日本现行规定改写。正文按 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hans">CC BY 4.0</a> 发布，转载改编请署名并附原文链接。</div>
   </div>
 </main>
 
 <div id="doc-mask" hidden>
   <div id="doc-modal" role="dialog" aria-modal="true" aria-labelledby="dm-t">
-    <div class="dm-h"><b id="dm-t"></b><a id="dm-gh" target="_blank" rel="noopener">在 GitHub 打开</a><button type="button" id="dm-x" aria-label="关闭">✕</button></div>
+    <div class="dm-h"><b id="dm-t"></b><a id="dm-gh" target="_blank" rel="noopener" data-i18n="dmgh">在 GitHub 打开</a><button type="button" id="dm-x" aria-label="关闭">✕</button></div>
     <div class="dm-b"><nav class="dm-toc" id="dm-toc"></nav><div class="dm-doc" id="dm-doc"></div></div>
   </div>
 </div>
 
 <div id="xref-pop" hidden>
-  <div class="xp-h"><b></b><button class="xp-go" type="button">跳过去</button><button class="xp-x" type="button" aria-label="关闭">✕</button></div>
+  <div class="xp-h"><b></b><button class="xp-go" type="button" data-i18n="go">跳过去</button><button class="xp-x" type="button" aria-label="关闭">✕</button></div>
 </div>
 
 <script>
+/* ---------- 语言：?lang=en 读英文译本 en/，?lang=zh 读中文；没带参数就沿用上次的选择 ----------
+   中文是准的，英文每条都记着译自哪一版中文（tools/check-en.mjs）。离线单文件只内联了中文，固定用中文。 */
+const LANG = (() => {
+  if (window.__CORPUS__) return 'zh';
+  const p = new URLSearchParams(location.search).get('lang');
+  if (p === 'en' || p === 'zh'){ try { localStorage.setItem('lang', p); } catch (e) {} return p; }
+  try { if (localStorage.getItem('lang') === 'en') return 'en'; } catch (e) {}
+  return 'zh';
+})();
+const EN = LANG === 'en';
+const T = (zh, en) => EN ? en : zh;
+// 英文界面的静态文案：键对应 HTML 里的 data-i18n
+const I18N_EN = {
+  title: 'A Cost-Effective Guide to Living in Japan',
+  'g-sec': 'Sections',
+  'g-ratio': 'Value for effort <small>author’s judgment, comparable within one measure</small>',
+  'g-lens': 'What it buys <small>measures are not compared</small>',
+  'g-grade': 'Evidence <small>meta-analysis/RCT · some research · consensus</small>',
+  'g-money': 'Money', 'g-time': 'Time', 'g-will': 'Willpower',
+  r3: 'Top', r2: 'High', r1: 'Fair',
+  l1: 'Life', l2: 'Money', l3: 'Time &amp; energy', l4: 'Freedom',
+  gA: 'Grade A', gB: 'Grade B', gC: 'Grade C',
+  m0: 'Free', m1: 'Little', m2: 'More',
+  t0: 'Minutes', t1: 'Hours', t2: 'Daily',
+  w0: 'None', w1: 'Some', w2: 'Lots',
+  fdisp: 'Only entries marked disputed', ftodo: 'Only entries with items to be verified',
+  reset: 'Clear filters',
+  hint: '<p>One section at a time; costs and grades can be multi-selected. Options in the same group are combined with OR, different groups with AND.</p><p>Within each section, entries are ordered by value for effort; searching does not change the order.</p><p>Text and tags come from the English files under <a href="en/">en/</a>, translated from the Chinese in <a href="book/">book/</a>. The Chinese is authoritative.</p>',
+  p1: 'Every entry answers two questions: what you spend, and what you get back.',
+  p2: 'Who gets the benefit is also tiered: you first, then your spouse and close family, then friends and colleagues, and strangers last. Last is not zero; the chance of it coming back to you is just smaller, and the risks have to be weighed with it.',
+  p3: 'You do not have to do it all: this is a shortlist ranked by value for effort, not a to-do list. Picking one or two counts; come back for the rest when you need them. For the low-effort ones, choose “Free” under Money and “None” under Willpower on the left. References with a dotted underline, such as “Section X, entry Y”, can be clicked to see that entry in place. Each entry has a 中 link to its Chinese original.',
+  stat: 'Showing <b id="cnt">–</b> of <span id="tot">–</span> entries',
+  doclinks: 'Long-form article (Chinese): <a href="https://github.com/masteren/HowToLiveBetter-JP/blob/main/docs/%E7%94%9F%E7%89%A9%E9%92%9F%E5%92%8C%E5%A4%9C%E7%8F%AD.md">body clocks and night shifts</a>',
+  gsum: 'Abbreviations and terms', gp: 'Click or hover over a word with a dotted underline for its meaning. The full list:',
+  status: '<span id="status-t">Loading entries …</span><div class="bar"><i id="status-b"></i></div>',
+  empty: 'No matching entries. Remove a filter, or try a shorter keyword.<div><button id="reset2">Clear filters</button></div>',
+  foot: 'Figures follow the measure stated in each entry: mortality, time and energy, money and personal freedom are counted separately and never converted. How each source was checked is recorded in <a href="https://github.com/masteren/HowToLiveBetter-JP/tree/main/docs/%E6%A0%B8%E5%AE%9E%E8%AE%B0%E5%BD%95">docs/核实记录</a> (Chinese). Adapted from <a href="https://github.com/eternity4719/HowToLiveBetter">《高性价比人生指南》</a> by eternity4719, with the legal and administrative parts rewritten for current Japanese rules. The text is released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; credit the source with a link when sharing or adapting.',
+  dmgh: 'Open on GitHub', go: 'Go there'
+};
+function localize(){
+  const sw = document.getElementById('lang');
+  if (window.__CORPUS__){ sw.hidden = true; return; }
+  // 切换语言时把筛选和锚点带过去
+  const p = new URLSearchParams(location.search); p.set('lang', EN ? 'zh' : 'en');
+  sw.href = '?' + p.toString() + location.hash;
+  sw.addEventListener('click', () => { const q = new URLSearchParams(location.search); q.set('lang', EN ? 'zh' : 'en'); sw.href = '?' + q.toString() + location.hash; });
+  if (!EN) return;
+  sw.textContent = '中文'; sw.title = '中文'; sw.setAttribute('aria-label', '中文');
+  document.documentElement.lang = 'en';
+  document.title = 'A Cost-Effective Guide to Living in Japan · for foreign residents';
+  document.querySelectorAll('[data-i18n]').forEach(el => { const v = I18N_EN[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
+  const rl = document.getElementById('readme-link'); rl.href = 'README.en.md'; rl.title = 'View README.en.md';
+  const q = document.getElementById('q'); q.placeholder = 'Search entries'; q.setAttribute('aria-label', 'Search entries');
+  const mb = document.getElementById('menu'); mb.setAttribute('aria-label', 'Open filters');
+  const th = document.getElementById('theme'); th.setAttribute('aria-label', 'Toggle dark mode'); th.title = 'Toggle dark mode';
+  document.getElementById('dm-x').setAttribute('aria-label', 'Close');
+}
 /* ---------- 调试面板：地址后加 ?perf=1 打开，实测各步耗时 ---------- */
 const PERF = (function(){
   const off = { on:false, log(){}, mark(){} };
@@ -471,6 +532,16 @@ const PERF = (function(){
 })();
 
 /* ---------- 解析 README ---------- */
+// 两种语言的字段名：中文「- 成本：」，英文「- Cost: 」
+const FIELD_RE = (() => {
+  const L = EN ? {cost:'Cost', human:'In plain words', gain:'Benefit', grade:'Evidence', src:'Sources', note:'Notes'}
+               : {cost:'成本', human:'说人话', gain:'收益', grade:'证据等级', src:'来源', note:'备注'};
+  const sep = EN ? ':\\s*' : '：';
+  const o = {}; for (const k in L) o[k] = new RegExp('^- ' + L[k] + sep + (k === 'grade' ? '\\s*([ABC])' : '(.*)$'));
+  return o;
+})();
+const DISPUTE_RE = EN ? /^(Disputed|Highly disputed|The dispute)/ : /^争议/;
+const TODO_RE = EN ? /TODO|to be verified/i : /待核实|TODO/;
 function parseReadme(md){
   const lines = md.split(/\r?\n/);
   const sections = [];
@@ -487,21 +558,22 @@ function parseReadme(md){
       for (const kv of m[1].split(/\s+/)){ const [k,v] = kv.split('='); if(k==='钱') entry.money=v; if(k==='时间') entry.time=v; if(k==='毅力') entry.will=v; if(k==='收益') entry.level=v; if(k==='口径') entry.lens=v; }
       continue;
     }
+    if (line.startsWith('<!--')) continue;   // 原条目、译自哪版中文这类注释，不进正文
     if (entry){
-      if ((m = /^- 成本：(.*)$/.exec(line))) entry.cost = m[1];
-      else if ((m = /^- 说人话：(.*)$/.exec(line))) entry.human = m[1];
-      else if ((m = /^- 收益：(.*)$/.exec(line))) entry.gain = m[1];
-      else if ((m = /^- 证据等级：\s*([ABC])/.exec(line))) entry.grade = m[1];
-      else if ((m = /^- 来源：(.*)$/.exec(line))) entry.src = m[1];
-      else if ((m = /^- 备注：(.*)$/.exec(line))) entry.note = m[1];
+      if ((m = FIELD_RE.cost.exec(line))) entry.cost = m[1];
+      else if ((m = FIELD_RE.human.exec(line))) entry.human = m[1];
+      else if ((m = FIELD_RE.gain.exec(line))) entry.gain = m[1];
+      else if ((m = FIELD_RE.grade.exec(line))) entry.grade = m[1];
+      else if ((m = FIELD_RE.src.exec(line))) entry.src = m[1];
+      else if ((m = FIELD_RE.note.exec(line))) entry.note = m[1];
       continue;
     }
     if (line) sec.intro.push(line);   // 第一条之前的每一段导读都收，不止第一段
   }
   flush();
   for (const s of sections) for (const e of s.entries){
-    e.dispute = /^争议/.test(e.note);
-    e.todo = /待核实|TODO/.test(e.src + e.gain + e.note + e.cost);
+    e.dispute = DISPUTE_RE.test(e.note);
+    e.todo = TODO_RE.test(e.src + e.gain + e.note + e.cost);
     e.cs = (COST_W.money[e.money] ?? 0) + (COST_W.time[e.time] ?? 0) + (COST_W.will[e.will] ?? 0);
     e.ratio = e.level === '大' ? (e.cs === 0 ? '极高' : (e.cs <= 2 ? '高' : '一般'))
             : e.level === '中' ? (e.cs === 0 ? '高' : '一般') : '一般';
@@ -513,15 +585,15 @@ function parseReadme(md){
 /* ---------- 术语表 ---------- */
 let GLOSS = [];   // [{term, meaning, re}]
 function parseGlossary(md){
-  const m = /^## 读懂数字[^\n]*\n([\s\S]*?)(?=^## )/m.exec(md);
+  const m = (EN ? /^## Glossary[^\n]*\n([\s\S]*?)(?=^## )/m : /^## 读懂数字[^\n]*\n([\s\S]*?)(?=^## )/m).exec(md);
   if (!m) return [];
   const rows = [];
   for (const line of m[1].split(/\r?\n/)){
     const c = /^\|\s*(.+?)\s*\|\s*(.+?)\s*\|$/.exec(line);
-    if (!c || c[1] === '术语' || /^-+$/.test(c[1])) continue;
+    if (!c || c[1] === '术语' || c[1] === 'Term' || /^-+$/.test(c[1])) continue;
     for (const t of c[1].split('、')){
       const term = t.trim(); if (!term) continue;
-      rows.push({term, meaning: c[2], latin: /^[A-Za-z0-9%. ]+$/.test(term)});
+      rows.push({term, meaning: c[2], latin: /^[A-Za-z0-9%. ]+$/.test(term), acro: /^[A-Z0-9%. ]+$/.test(term)});
     }
   }
   rows.sort((a,b) => b.term.length - a.term.length);
@@ -529,7 +601,8 @@ function parseGlossary(md){
   const escRe = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const alt = (list) => list.map(g => escRe(g.term)).join('|');
   const parts = [];
-  const latin = rows.filter(g => g.latin), cjk = rows.filter(g => !g.latin);
+  // 英文正文里 Fine、Immigration 这类普通词到处都是，只给缩写（HR、95% CI）加虚线
+  const latin = rows.filter(g => EN ? g.acro : g.latin), cjk = EN ? [] : rows.filter(g => !g.latin);
   if (latin.length) parts.push(`(?<![A-Za-z0-9])(?:${alt(latin)})(?![A-Za-z0-9])`);
   if (cjk.length) parts.push(`(?:${alt(cjk)})`);
   GLOSS_RE = new RegExp(parts.join('|'), 'g');
@@ -679,7 +752,10 @@ const NUMS = '[\\d、]+(?:\\s*到\\s*\\d+)?';
 // 最后那一段认「见第 9 节」「走第 8、9 节的法律路径」这种不带条号的整节指路，
 // 全书有 135 处，以前一律是死字（2026-09-20 用户在第 5 节撞到的「（见第 9 节）」）。
 // 它必须排在最后：前面几段先吃掉「第 9 节第 3 条」，剩下的才轮到它。
-const XREF_RE = new RegExp(`第\\s*(\\d+)\\s*节第\\s*(${NUMS})\\s*条|本节第\\s*(${NUMS})\\s*条|第\\s*(${NUMS})\\s*条|第\\s*([\\d、]+)\\s*节`, 'g');
+// 英文译本的写法是「Section 2, entry 10」「entry 7 of this section」「entry 3」「Section 9」，分组和中文一一对应
+const XREF_RE = EN
+  ? /Section (\d+), entry (\d+)|entry (\d+) of this section|entry (\d+)|Section (\d+)/gi
+  : new RegExp(`第\\s*(\\d+)\\s*节第\\s*(${NUMS})\\s*条|本节第\\s*(${NUMS})\\s*条|第\\s*(${NUMS})\\s*条|第\\s*([\\d、]+)\\s*节`, 'g');
 // 「8 到 10」摊成 8、9、10；上限 40 是防着把法条条款号那种大范围摊成几百个键
 const xrefKeys = (sec, spec) => {
   const ns = [];
@@ -722,13 +798,13 @@ function showXref(a){
     if (k[0] === 's'){                       // 整节：给节名和条目数，点「跳过去」落到节首
       const sec = SECS.get(k.slice(1)); if (!sec) continue;
       const b = document.createElement('div'); b.className = 'xp-b';
-      const s = document.createElement('div'); s.className = 'xp-s'; s.textContent = `整节，共 ${sec.entries.length} 条`;
+      const s = document.createElement('div'); s.className = 'xp-s'; s.textContent = T(`整节，共 ${sec.entries.length} 条`, `Whole section, ${sec.entries.length} entries`);
       const t = document.createElement('strong'); t.textContent = `${sec.n}. ${sec.title}`;
       b.append(s, t); POP.appendChild(b); continue;
     }
     const e = ITEMS.get(k); if (!e) continue;
     const b = document.createElement('div'); b.className = 'xp-b';
-    const s = document.createElement('div'); s.className = 'xp-s'; s.textContent = `第 ${e.sec} 节第 ${e.n} 条`;
+    const s = document.createElement('div'); s.className = 'xp-s'; s.textContent = T(`第 ${e.sec} 节第 ${e.n} 条`, `Section ${e.sec}, entry ${e.n}`);
     const t = document.createElement('strong'); t.textContent = e.title;
     b.append(s, t);
     if (e.human){ const p = document.createElement('p'); p.style.cssText = 'margin:4px 0 0'; p.textContent = e.human; b.appendChild(p); }
@@ -855,9 +931,14 @@ POP.querySelector('.xp-go').addEventListener('click', () => { gotoItem(POP.datas
 addEventListener('resize', () => { POP.hidden = true; });
 
 const COST_W = { money:{'0':0,'少':1,'多':2}, time:{'少':0,'中':1,'多':2}, will:{'否':0,'些':1,'是':2} };
-const LENS_LABEL = {'死亡率':'换寿命','金钱':'换钱','时间':'换时间精力','自由':'换人身自由'};
+const LENS_LABEL = EN ? {'死亡率':'Buys life','金钱':'Buys money','时间':'Buys time','自由':'Buys freedom'} : {'死亡率':'换寿命','金钱':'换钱','时间':'换时间精力','自由':'换人身自由'};
+const RATIO_LABEL = EN ? {'极高':'Top','高':'High','一般':'Fair'} : {'极高':'极高','高':'高','一般':'一般'};
+const LEVEL_LABEL = EN ? {'大':'large','中':'medium','小':'small'} : {'大':'大','中':'中','小':'小'};
+let STALE = {};   // 英文译本里中文改过、还没重译的条目：节号 → {stale:[条号]}，来自 en/stale.json
 /* ---------- 构建 DOM ---------- */
-const LABEL = { money:{'0':'不花钱','少':'花少量钱','多':'花不少钱'}, time:{'少':'顺手','中':'花几小时','多':'每天占时间'}, will:{'否':'不用毅力','些':'要一点毅力','是':'要很多毅力'} };
+const LABEL = EN
+  ? { money:{'0':'Free','少':'Little money','多':'More money'}, time:{'少':'Minutes','中':'A few hours','多':'Daily time'}, will:{'否':'No willpower','些':'Some willpower','是':'Lots of willpower'} }
+  : { money:{'0':'不花钱','少':'花少量钱','多':'花不少钱'}, time:{'少':'顺手','中':'花几小时','多':'每天占时间'}, will:{'否':'不用毅力','些':'要一点毅力','是':'要很多毅力'} };
 let CARDS = [], BLOCKS = [];
 // 侧栏条目目录：卡片 id → 目录里那一行，节号 → 该节的目录块
 const TOC = new Map(), TOC_SEC = new Map();
@@ -903,11 +984,11 @@ function build(sections){
   const fsec = document.getElementById('f-sec');
   const allBtn = document.createElement('button');
   allBtn.className = 'sec-link all'; allBtn.dataset.v = ''; allBtn.setAttribute('aria-pressed','true');
-  allBtn.innerHTML = `<span>全部章节</span><i>${sections.reduce((n,s)=>n+s.entries.length,0)}</i>`;
+  allBtn.innerHTML = `<span>${T('全部章节','All sections')}</span><i>${sections.reduce((n,s)=>n+s.entries.length,0)}</i>`;
   fsec.appendChild(allBtn);
   for (const s of sections){
     const b = document.createElement('button'); b.className='sec-link'; b.dataset.v = s.n; b.setAttribute('aria-pressed','false');
-    b.innerHTML = `<span>${s.n}. ${esc(s.title)}</span><i>${s.entries.length}</i><b class="fold" title="展开或收起本节目录"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></b>`; fsec.appendChild(b);
+    b.innerHTML = `<span>${s.n}. ${esc(s.title)}</span><i>${s.entries.length}</i><b class="fold" title="${T('展开或收起本节目录','Expand or collapse')}"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></b>`; fsec.appendChild(b);
     const sub = document.createElement('div'); sub.className = 'toc-sub'; sub.hidden = true;
     for (const e of s.entries){
       const a = document.createElement('a'); a.href = `#e-${e.sec}-${e.n}`; a.dataset.go = `${e.sec}-${e.n}`; a.title = e.title;
@@ -915,7 +996,7 @@ function build(sections){
       sub.appendChild(a); TOC.set(`e-${e.sec}-${e.n}`, a);
     }
     // 其他筛选把这节条目全筛没了时，展开后显示这一行，不留空白
-    const none = document.createElement('p'); none.className = 'toc-none'; none.hidden = true; none.textContent = '没有符合当前筛选的条目';
+    const none = document.createElement('p'); none.className = 'toc-none'; none.hidden = true; none.textContent = T('没有符合当前筛选的条目', 'No entries match the current filters');
     sub.appendChild(none);
     fsec.appendChild(sub); TOC_SEC.set(s.n, sub);
 
@@ -930,26 +1011,31 @@ function build(sections){
       const id = `e-${e.sec}-${e.n}`;
       const c = document.createElement('article'); c.className='card'; c.id = id;
       c.innerHTML = `
-        <div class="card-h"><span class="idx">${e.n}</span><h3 class="t"></h3><a class="anchor" href="#${id}" aria-label="本条链接">#</a></div>
+        <div class="card-h"><span class="idx">${e.n}</span><h3 class="t"></h3><a class="anchor" href="#${id}" aria-label="${T('本条链接','Link to this entry')}">#</a>${EN ? `<a class="zh" href="?lang=zh#${id}" title="中文原文 / Chinese original" lang="zh">中</a>` : ''}</div>
         <div class="badges"></div>
         <p class="human"></p>
         <div class="rows">
-          <div class="k">成本</div><div class="v cost"></div>
-          <div class="k">收益</div><div class="v gain"></div>
-          <div class="k">备注</div><div class="v note"></div>
+          <div class="k">${T('成本','Cost')}</div><div class="v cost"></div>
+          <div class="k">${T('收益','Benefit')}</div><div class="v gain"></div>
+          <div class="k">${T('备注','Notes')}</div><div class="v note"></div>
         </div>
-        <details class="src"><summary>来源<span class="cnt"></span></summary><div class="body"></div></details>`;
+        <details class="src"><summary>${T('来源','Sources')}<span class="cnt"></span></summary><div class="body"></div></details>`;
       const badges = c.querySelector('.badges');
       const add = (cls, text) => { const t=document.createElement('span'); t.className='badge '+cls; t.textContent=text; badges.appendChild(t); };
       if (e.ratio) { const t = document.createElement('span'); t.className = 'badge r' + ({'极高':'3','高':'2','一般':'1'}[e.ratio]);
-        t.textContent = '性价比 ' + e.ratio;
-        t.title = '作者判断：由收益量级（' + e.level + '）和三项成本合成，只在同一口径（' + LENS_LABEL[e.lens] + '）内可比，与证据等级无关';
+        t.textContent = T('性价比 ', 'Value: ') + RATIO_LABEL[e.ratio];
+        t.title = T('作者判断：由收益量级（' + e.level + '）和三项成本合成，只在同一口径（' + LENS_LABEL[e.lens] + '）内可比，与证据等级无关',
+          'Author’s judgment, combining benefit size (' + LEVEL_LABEL[e.level] + ') and the three costs; comparable only within one measure (' + LENS_LABEL[e.lens] + '), and separate from the evidence grade');
         badges.appendChild(t); }
-      add(e.grade, `证据 ${e.grade} 级`);
+      add(e.grade, T(`证据 ${e.grade} 级`, `Evidence ${e.grade}`));
       if (e.lens) add('plain', LENS_LABEL[e.lens] || e.lens);
       for (const d of ['money','time','will']) if (e[d]) add('plain', LABEL[d][e[d]] || e[d]);
-      if (e.dispute) add('danger', '争议');
-      if (e.todo) add('warn', '含待核实');
+      if (e.dispute) add('danger', T('争议', 'Disputed'));
+      if (e.todo) add('warn', T('含待核实', 'To be verified'));
+      if (EN && (STALE[e.sec]?.stale || []).includes(+e.n)){
+        add('warn', 'Translation outdated');
+        badges.lastChild.title = 'The Chinese text of this entry has changed since it was translated. The Chinese original is authoritative.';
+      }
       block.appendChild(c);
       const card = {e, el:c, key:null, vis:false, f:{t:c.querySelector('.t'), cost:c.querySelector('.cost'), human:c.querySelector('.human'), gain:c.querySelector('.gain'), note:c.querySelector('.note'), src:c.querySelector('.src .body'), srcN:c.querySelector('.src summary .cnt'), details:c.querySelector('.src')}};
       renderCard(card, [], '');
@@ -963,7 +1049,7 @@ function build(sections){
 function buildGlossary(){
   const box = document.getElementById('gloss'); if (!GLOSS.length) { box.hidden = true; return; }
   const dl = box.querySelector('dl');
-  for (const g of [...GLOSS].sort((a,b) => a.term.localeCompare(b.term, 'zh'))){
+  for (const g of [...GLOSS].sort((a,b) => a.term.localeCompare(b.term, EN ? 'en' : 'zh'))){
     const dt = document.createElement('dt'); dt.textContent = g.term;
     const dd = document.createElement('dd'); dd.textContent = g.meaning;
     dl.appendChild(dt); dl.appendChild(dd);
@@ -985,6 +1071,7 @@ function writeUrl(){
   for (const d of DIMS) if (state[d].size) p.set(d, [...state[d]].join(','));
   if (state.dispute) p.set('dispute','1'); if (state.todo) p.set('todo','1');
   if (PERF.on) p.set('perf','1');
+  if (EN) p.set('lang','en');
   const qs = p.toString(); history.replaceState(null, '', (qs ? '?'+qs : location.pathname) + location.hash);
 }
 function syncControls(){
@@ -1006,7 +1093,7 @@ function renderCard(card, terms, key){
   renderText(f.gain, e.gain, terms);
   renderText(f.note, e.note, terms);
   const nSrc = renderSrc(f.src, e.src, terms);
-  f.srcN.textContent = nSrc > 1 ? ` · ${nSrc} 条` : '';
+  f.srcN.textContent = nSrc > 1 ? T(` · ${nSrc} 条`, ` · ${nSrc}`) : '';
   const inBody = (e.title+e.human+e.cost+e.gain+e.note).toLowerCase();
   f.details.open = terms.length > 0 && terms.some(t => e.src.toLowerCase().includes(t)) && !terms.some(t => inBody.includes(t));
   card.key = key;
@@ -1149,7 +1236,7 @@ async function readText(path, tries = 3){
       const net = retry || err instanceof TypeError || /^(TimeoutError|AbortError)$/.test(err.name);
       if (!net) throw err;
       if (i >= tries){
-        const e = new Error(`取不到 ${path}（网络中断或超时）`);
+        const e = new Error(T(`取不到 ${path}（网络中断或超时）`, `Could not fetch ${path} (network interrupted or timed out)`));
         e.net = true; throw e;
       }
       await new Promise(r => setTimeout(r, 500 * i * i));   // 0.5s、2s 后再试
@@ -1265,7 +1352,7 @@ async function dmOpen(path, from){
   DM.gh.href = dmHref(path);
   DM.toc.textContent = ''; DM.heads = [];
   DM.title.textContent = decodeURIComponent(path.replace(/^docs\//, '').replace(/\.md$/, ''));
-  DM.doc.innerHTML = '<div class="dm-load">正在读取 …</div>';
+  DM.doc.innerHTML = '<div class="dm-load">' + T('正在读取 …', 'Loading …') + '</div>';
   DM.doc.scrollTop = 0;
   document.getElementById('dm-x').focus();
   let md;
@@ -1311,19 +1398,21 @@ document.getElementById('dm-x').addEventListener('click', dmClose);
 DM.mask.addEventListener('click', ev => { if (ev.target === DM.mask) dmClose(); });
 document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !DM.mask.hidden){ ev.stopPropagation(); dmClose(); } }, true);
 
+localize();
 (async function init(){
   const status = document.getElementById('status');
   const statusText = document.getElementById('status-t'), statusBar = document.getElementById('status-b');
   const progress = (done, total) => {
-    statusText.textContent = `正在读取正文 ${done}/${total}`;
+    statusText.textContent = T(`正在读取正文 ${done}/${total}`, `Loading entries ${done}/${total}`);
     statusBar.style.width = (done / total * 100).toFixed(1) + '%';
   };
   // 离线单文件版把正文内联在 window.__CORPUS__ 里（tools/offline/build.mjs 生成），此时不发任何请求
   const EMBED = window.__CORPUS__;
   try {
     if (!EMBED && location.protocol === 'file:') throw new Error('file');
-    const md = EMBED ? EMBED.readme : await readText('README.md');
-    const files = [...new Set(Array.from(md.matchAll(/\]\((book\/[^)]+\.md)\)/g), m => m[1]))].sort();
+    const md = EMBED ? EMBED.readme : await readText(EN ? 'README.en.md' : 'README.md');
+    const files = [...new Set(Array.from(md.matchAll(EN ? /\]\((en\/[^)]+\.md)\)/g : /\]\((book\/[^)]+\.md)\)/g), m => m[1]))].sort();
+    if (EN) { try { STALE = JSON.parse(await readText('en/stale.json')); } catch (e) {} }
     if (!files.length) throw new Error('empty');
     let done = 0;
     if (!EMBED) progress(0, files.length);
@@ -1364,19 +1453,19 @@ document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !DM.mask
     }
   } catch (err) {
     if (err.message === 'file'){
-      status.innerHTML = '这个页面要通过 http 打开才能读取正文。在仓库目录运行 <code>python -m http.server</code>，然后访问 <code>http://localhost:8000/</code>；或直接用 GitHub Pages 地址。';
+      status.innerHTML = T('这个页面要通过 http 打开才能读取正文。在仓库目录运行 <code>python -m http.server</code>，然后访问 <code>http://localhost:8000/</code>；或直接用 GitHub Pages 地址。', 'This page must be opened over http to read the entries. Run <code>python -m http.server</code> in the repository folder and visit <code>http://localhost:8000/</code>, or use the GitHub Pages address.');
       return;
     }
     if (err.net){
-      status.innerHTML = `加载失败：${esc(String(err.message))}`
-        + '<div><button type="button" id="retry">继续加载</button></div>';
+      status.innerHTML = T('加载失败：', 'Loading failed: ') + esc(String(err.message))
+        + '<div><button type="button" id="retry">' + T('继续加载', 'Continue loading') + '</button></div>';
       document.getElementById('retry').addEventListener('click', () => {
-        status.innerHTML = '<span id="status-t">正在读取正文 …</span><div class="bar"><i id="status-b"></i></div>';
+        status.innerHTML = '<span id="status-t">' + T('正在读取正文 …', 'Loading entries …') + '</span><div class="bar"><i id="status-b"></i></div>';
         init();
       });
       return;
     }
-    status.innerHTML = `读取正文失败（${esc(String(err.message))}）。确认 README.md 和 book/ 目录都在 index.html 旁边。`;
+    status.innerHTML = T(`读取正文失败（${esc(String(err.message))}）。确认 README.md 和 book/ 目录都在 index.html 旁边。`, `Failed to read entries (${esc(String(err.message))}). Check that README.en.md and the en/ folder are next to index.html.`);
   }
 })();
 </script>

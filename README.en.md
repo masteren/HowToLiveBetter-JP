@@ -19,7 +19,7 @@ A practical guide for foreign residents of Japan: keeping your residence status 
 <a href="#evidence-grades"><img alt="Evidence grades" src="https://img.shields.io/badge/EVIDENCE-A%20221%20%C2%B7%20B%20119%20%C2%B7%20C%209-915930?style=for-the-badge&labelColor=555"></a>
 <br>
 <a href="docs/核实记录/"><img alt="Primary sources" src="https://img.shields.io/badge/SOURCES-686%20LINKS-6f42c1?style=for-the-badge&labelColor=555"></a>
-<a href="https://github.com/masteren/HowToLiveBetter-JP/releases/tag/epub-latest"><img alt="Ebook: EPUB · PDF" src="https://img.shields.io/badge/EBOOK-EPUB%20%C2%B7%20PDF-d9480f?style=for-the-badge&labelColor=555"></a>
+<a href="https://github.com/masteren/HowToLiveBetter-JP/releases/tag/epub-latest"><img alt="Ebook (Chinese only): EPUB · PDF" src="https://img.shields.io/badge/EBOOK%20(CHINESE)-EPUB%20%C2%B7%20PDF-d9480f?style=for-the-badge&labelColor=555"></a>
 <a href="#license"><img alt="License: CC BY 4.0" src="https://img.shields.io/badge/LICENSE-CC%20BY%204.0-b08800?style=for-the-badge&labelColor=555"></a>
 <a href="https://github.com/eternity4719/HowToLiveBetter"><img alt="Adapted from HowToLiveBetter" src="https://img.shields.io/badge/ADAPTED%20FROM-HowToLiveBetter-565a5f?style=for-the-badge&labelColor=555"></a>
 

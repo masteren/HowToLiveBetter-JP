@@ -19,7 +19,7 @@
 <a href="#エビデンスレベル"><img alt="エビデンスレベル" src="https://img.shields.io/badge/%E3%82%A8%E3%83%93%E3%83%87%E3%83%B3%E3%82%B9%E3%83%AC%E3%83%99%E3%83%AB-A%20221%20%C2%B7%20B%20119%20%C2%B7%20C%209-915930?style=for-the-badge&labelColor=555"></a>
 <br>
 <a href="docs/核实记录/"><img alt="一次資料" src="https://img.shields.io/badge/%E4%B8%80%E6%AC%A1%E8%B3%87%E6%96%99-686%20%E3%83%AA%E3%83%B3%E3%82%AF-6f42c1?style=for-the-badge&labelColor=555"></a>
-<a href="https://github.com/masteren/HowToLiveBetter-JP/releases/tag/epub-latest"><img alt="電子版：EPUB · PDF" src="https://img.shields.io/badge/%E9%9B%BB%E5%AD%90%E7%89%88-EPUB%20%C2%B7%20PDF-d9480f?style=for-the-badge&labelColor=555"></a>
+<a href="https://github.com/masteren/HowToLiveBetter-JP/releases/tag/epub-latest"><img alt="電子版（中国語のみ）：EPUB · PDF" src="https://img.shields.io/badge/%E9%9B%BB%E5%AD%90%E7%89%88%EF%BC%88%E4%B8%AD%E5%9B%BD%E8%AA%9E%EF%BC%89-EPUB%20%C2%B7%20PDF-d9480f?style=for-the-badge&labelColor=555"></a>
 <a href="#ライセンス"><img alt="ライセンス：CC BY 4.0" src="https://img.shields.io/badge/%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9-CC%20BY%204.0-b08800?style=for-the-badge&labelColor=555"></a>
 <a href="https://github.com/eternity4719/HowToLiveBetter"><img alt="原著：高性价比人生指南" src="https://img.shields.io/badge/%E5%8E%9F%E8%91%97-%E9%AB%98%E6%80%A7%E4%BB%B7%E6%AF%94%E4%BA%BA%E7%94%9F%E6%8C%87%E5%8D%97-565a5f?style=for-the-badge&labelColor=555"></a>
 

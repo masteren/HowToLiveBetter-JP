@@ -28,9 +28,9 @@ This section lists things that cost money or effort but do not deliver the promi
 
 ### 3. Do not take multivitamins to live longer or prevent cardiovascular disease
 <!-- 成本标签: 钱=0 时间=少 毅力=否 收益=中 口径=金钱 -->
-<!-- zh: 不要为了长寿或防心血管病吃复合维生素 | 39744bd9 -->
+<!-- zh: 不要为了长寿或防心血管病吃复合维生素 | 9d28985d -->
 - Cost: Taking them every day adds up to a sum over a year. Taking one takes no time, just one pill. Over time it is easy to become dependent, feeling as if you have left something undone on a day you miss it.
-- In plain words: 14,000 male doctors took multivitamins for eleven years. Just as many had major heart and blood vessel events, and just as many died, as those who did not. Looking at 9 trials with over 50,000 people together, no effect on death could be seen either. Not buying them saves 200 to 700 yuan a year. People found to be genuinely deficient in a nutrient, and pregnant women taking folic acid, are not covered by this entry.
+- In plain words: 14,000 male doctors took multivitamins for eleven years. Just as many had major heart and blood vessel events, and just as many died, as those who did not. Looking at 9 trials with over 50,000 people together, no effect on death could be seen either. Not buying them saves money you would otherwise spend every year. People found to be genuinely deficient in a nutrient, and pregnant women taking folic acid, are not covered by this entry.
 - Benefit: The PHS II trial recruited 14,641 male doctors and followed them for 11.2 years (the median: half followed longer, half shorter). Those taking them and those not had the same rate of major cardiovascular events. Major cardiovascular events HR 1.01 (HR is the hazard ratio; 1 means the two sides are the same). 95% CI 0.91–1.10 is this figure's confidence range. Death was also the same, all-cause mortality HR 0.94 (0.88–1.02). The US body that rates preventive measures, USPSTF, pooled 9 randomized controlled trials with 51,550 people in 2022, finding multivitamins unrelated to total mortality. Rated I, meaning the evidence is insufficient to say. It looks worthwhile because "one tablet covers all nutrients" sounds right, and it costs only a few cents a day
 - Evidence: A
 - Sources: Sesso HD et al. (2012). Multivitamins in the prevention of cardiovascular disease in men: the Physicians' Health Study II randomized controlled trial. JAMA. <https://doi.org/10.1001/jama.2012.14805>；US Preventive Services Task Force (2022). Vitamin, Mineral, and Multivitamin Supplementation to Prevent Cardiovascular Disease and Cancer. JAMA. <https://doi.org/10.1001/jama.2022.8970>；Gaziano JM, et al. (2012). Multivitamins in the Prevention of Cancer in Men. JAMA. <https://doi.org/10.1001/jama.2012.14641> (the cancer results in the notes)
@@ -38,9 +38,9 @@ This section lists things that cost money or effort but do not deliver the promi
 
 ### 4. Do not take ordinary fish oil to prevent cardiovascular disease
 <!-- 成本标签: 钱=0 时间=少 毅力=否 收益=中 口径=金钱 -->
-<!-- zh: 不要为了预防心血管病吃普通鱼油 | 2dcfb80d -->
+<!-- zh: 不要为了预防心血管病吃普通鱼油 | 40059f30 -->
 - Cost: Taking it every day adds up to a sum over a year. Taking it takes no time.
-- In plain words: Two large trials recruited 26,000 people and 15,000 people with diabetes respectively. People who took 1 gram of fish oil a day had as many major heart and blood vessel events and deaths as those who did not. "Eating fish is good for you" does not mean "fish oil capsules are good for you". Not buying them saves 400 to 1,000 yuan a year.
+- In plain words: Two large trials recruited 26,000 people and 15,000 people with diabetes respectively. People who took 1 gram of fish oil a day had as many major heart and blood vessel events and deaths as those who did not. "Eating fish is good for you" does not mean "fish oil capsules are good for you". Not buying them saves money you would otherwise spend every year.
 - Benefit: The VITAL trial recruited 25,871 people taking 1 gram of fish oil a day, followed for 5.3 years (median). No difference was seen in major heart and blood vessel events or death. Major cardiovascular events HR 0.92 (HR is the hazard ratio; 1 means the two sides are the same). 95% CI 0.80–1.06 is this figure's confidence range. It crosses 1, meaning no difference can be seen. All-cause mortality HR 1.02 (0.90–1.15). The ASCEND trial recruited 15,480 people with diabetes, also 1 gram a day, followed for 7.4 years on average, likewise with no difference. Serious vascular events RR 0.97 (0.87–1.08). All-cause mortality RR 0.95 (0.86–1.05). It looks worthwhile because many people take "eating fish is good for you" to mean "fish oil capsules are good for you"
 - Evidence: A
 - Sources: Manson JE et al. (2019). Marine n-3 Fatty Acids and Prevention of Cardiovascular Disease and Cancer. NEJM. <https://doi.org/10.1056/NEJMoa1811403>；ASCEND Study Collaborative Group (2018). Effects of n-3 Fatty Acid Supplements in Diabetes Mellitus. NEJM. <https://doi.org/10.1056/NEJMoa1804989>；Bhatt DL, et al. (2019). Cardiovascular Risk Reduction with Icosapent Ethyl for Hypertriglyceridemia. New England Journal of Medicine. <https://doi.org/10.1056/NEJMoa1812792> (the high-purity prescription fish oil trial in the notes)
@@ -88,9 +88,9 @@ This section lists things that cost money or effort but do not deliver the promi
 
 ### 9. Do not count on glucosamine or chondroitin to treat knee arthritis
 <!-- 成本标签: 钱=0 时间=少 毅力=否 收益=中 口径=金钱 -->
-<!-- zh: 不要指望氨糖（葡萄糖胺）/软骨素治膝关节炎 | ce1ca064 -->
+<!-- zh: 不要指望氨糖（葡萄糖胺）/软骨素治膝关节炎 | 436e6586 -->
 - Cost: Taking them daily adds up to a substantial sum over a year.
-- In plain words: People with knee osteoarthritis who took a dummy pill for 24 weeks also had 60% saying the pain eased. Those taking glucosamine or chondroitin were only four or five percentage points more, a gap so small it may be chance. Spending 700 to 1,800 yuan a year basically buys you that 60% placebo effect.
+- In plain words: People with knee osteoarthritis who took a dummy pill for 24 weeks also had 60% saying the pain eased. Those taking glucosamine or chondroitin were only four or five percentage points more, a gap so small it may be chance. Spending a fair amount over a year basically buys you that 60% placebo effect.
 - Benefit: The GAIT trial recruited 1,583 people with knee osteoarthritis for 24 weeks. Of those taking placebo (a dummy pill), 60.1% also said their pain eased. Glucosamine was only 3.9 percentage points higher (P=0.30). Chondroitin 5.3 percentage points higher (P=0.17). The two together 6.5 percentage points higher (P=0.09). These gaps are all too small to rule out chance. The real drug celecoxib, used as a comparison in the same trial, was 10.0 percentage points higher (P=0.008). It looks worthwhile because "raw material to rebuild cartilage" sounds exactly right for the problem, and 60% say it works even on a dummy pill
 - Evidence: A
 - Sources: Clegg DO et al. (2006). Glucosamine, chondroitin sulfate, and the two in combination for painful knee osteoarthritis. NEJM. <https://doi.org/10.1056/NEJMoa052771>
@@ -188,9 +188,9 @@ This section lists things that cost money or effort but do not deliver the promi
 
 ### 19. Do not rely on vitamin C to prevent colds
 <!-- 成本标签: 钱=0 时间=少 毅力=否 收益=小 口径=金钱 -->
-<!-- zh: 不要靠维生素 C 预防感冒 | b1a8d27d -->
+<!-- zh: 不要靠维生素 C 预防感冒 | 4b2982e2 -->
 - Cost: Taking effervescent tablets every day adds up to a sum over a year.
-- In plain words: Taking vitamin C every day hardly reduces how many colds you get, and starting it only once a cold begins works some of the time and not others. Taking it every day shortens a cold by about 8%, roughly half a day less of feeling ill; whether that is worth 300 to 500 yuan a year is for you to work out. Marathon runners and soldiers marching in cold regions are the exception; among them, the number who caught colds fell by half.
+- In plain words: Taking vitamin C every day hardly reduces how many colds you get, and starting it only once a cold begins works some of the time and not others. Taking it every day shortens a cold by about 8%, roughly half a day less of feeling ill; whether that is worth paying for every year is for you to work out. Marathon runners and soldiers marching in cold regions are the exception; among them, the number who caught colds fell by half.
 - Benefit: Cochrane pooled 29 controlled trials with 11,306 people. Ordinary people taking vitamin C daily hardly reduced how often they caught colds. The proportion catching colds was RR 0.97 (RR is the risk ratio; 1 means the two sides are the same). 95% CI 0.94–1.00 is the confidence range. For trials starting vitamin C only after a cold began, the original says "no consistent effect" was seen: some trials worked, others did not. In the same review, long-term daily use shortened the duration of colds by about 8% (adults, 95% CI 3%–12%) and 14% in children (7%–21%). Marathon runners, skiers and soldiers marching in cold regions were the exception. In 5 trials with 598 people, about half as many caught colds. Incidence RR 0.48 (95% CI 0.35–0.64). It looks worthwhile because it is cheap, tastes pleasantly sweet and sour, and "vitamin C prevents colds" has been repeated for half a century
 - Evidence: A
 - Sources: Hemilä H, Chalker E (2013). Vitamin C for preventing and treating the common cold. Cochrane Database Syst Rev. <https://doi.org/10.1002/14651858.CD000980.pub4>

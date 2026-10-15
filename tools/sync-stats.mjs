@@ -117,6 +117,7 @@ const EDITS = [
   ['README.ja.md', '证据分级徽章', /A%20(\d+)%20%C2%B7%20B%20\d+%20%C2%B7%20C%20\d+/g, `A%20${grade.A}%20%C2%B7%20B%20${grade.B}%20%C2%B7%20C%20${grade.C}`],
   ['README.ja.md', '文献链接徽章', /%E4%B8%80%E6%AC%A1%E8%B3%87%E6%96%99-(\d+)%20/g, `%E4%B8%80%E6%AC%A1%E8%B3%87%E6%96%99-${links}%20`],
   ['index.html', '五处描述', /(\d+) 条建议/g, `${entries} 条建议`],
+  ['index.html', '英文描述', /(\d+) evidence-graded tips/g, `${entries} evidence-graded tips`],
   ['index.html', 'numberOfPages', /numberOfPages":(\d+)/g, `numberOfPages":${entries}`],
   ['index.html', '页头条目数', /\d+ 节 (\d+) 条/g, `${sections} 节 ${entries} 条`],
   ['index.html', '页脚文件数', /下的 (\d+) 个文件/g, `下的 ${sections} 个文件`],

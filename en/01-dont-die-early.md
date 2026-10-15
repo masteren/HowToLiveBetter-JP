@@ -70,9 +70,9 @@ In Japan, far more older people die from accidents at home than on the road: amo
 
 ### 7. Get tested for hepatitis B markers, and get vaccinated if you have no antibodies
 <!-- 成本标签: 钱=少 时间=少 毅力=否 收益=大 口径=死亡率 -->
-<!-- zh: 查乙肝两对半，没有抗体就打疫苗 | 2b9c70bb -->
+<!-- zh: 查乙肝两对半，没有抗体就打疫苗 | c224b749 -->
 - Cost: You pay part of the cost of both the test and the vaccine. Adult hepatitis B vaccination is 3 doses, completed within half a year.
-- In plain words: A test costs a few dozen yuan. In the Qidong trial followed for 30 years, people vaccinated against hepatitis B at birth were 84% less likely to develop primary liver cancer later. The proportion carrying the hepatitis B virus was 72% lower. Adults found to have no antibodies get three doses over half a year, for one or two hundred yuan.
+- In plain words: One blood test tells you whether you have antibodies. In the Qidong trial followed for 30 years, people vaccinated against hepatitis B at birth were 84% less likely to develop primary liver cancer later. The proportion carrying the hepatitis B virus was 72% lower. Adults found to have no antibodies get three doses over half a year.
 - Benefit: The Qidong trial randomized by community rather than individual and followed people for 30 years. Neonatal hepatitis B vaccination reduced primary liver cancer by 84%. The confidence range is 95% CI 23% to 97%. The hepatitis B surface antigen (HBsAg) positivity rate fell 72% (95% CI 68% to 75%); this rate is the proportion of people found to be carrying the virus.
 - Evidence: A
 - Sources: Qu C, et al. (2014). Efficacy of neonatal HBV vaccination on liver cancer and other liver diseases over 30-year follow-up of the Qidong hepatitis B intervention study. PLoS Medicine. <https://doi.org/10.1371/journal.pmed.1001774> ; Cui F, et al. (2017). Prevention of Chronic Hepatitis B after 3 Decades of Escalating Vaccination Policy, China. Emerging Infectious Diseases. <https://doi.org/10.3201/eid2305.161477>
@@ -80,9 +80,9 @@ In Japan, far more older people die from accidents at home than on the road: amo
 
 ### 8. If you are pierced by a nail or splinter, or a wound gets soil in it, get it treated that day and ask whether you need a tetanus shot
 <!-- 成本标签: 钱=少 时间=少 毅力=否 收益=大 口径=死亡率 -->
-<!-- zh: 被铁钉、木刺扎到或者伤口沾了泥土，当天去处理，顺便问破伤风要不要打 | d8267c71 -->
+<!-- zh: 被铁钉、木刺扎到或者伤口沾了泥土，当天去处理，顺便问破伤风要不要打 | d4844288 -->
 - Cost: One doctor's visit to treat the wound. If the doctor says you need one, a vaccine or immunoglobulin shot on top.
-- In plain words: Once tetanus develops, about 1 in 10 people die. Deep wounds and wounds with soil in them are the highest risk. For a dirty wound, if it has been 5 years since your last shot, you need 1 booster. Getting it treated that day costs less than a few dozen yuan; do not wait until the wound swells.
+- In plain words: Once tetanus develops, about 1 in 10 people die. Deep wounds and wounds with soil in them are the highest risk. For a dirty wound, if it has been 5 years since your last shot, you need 1 booster. Get it treated that day; do not wait until the wound swells.
 - Benefit: About 1 in 10 tetanus cases in the US is fatal. Deep wounds and wounds contaminated with soil carry higher risk. The CDC's wound management guidance for doctors states: for people who completed the 3-dose primary series, a clean minor wound needs a booster only if it has been 10 years since the last dose. Wounds contaminated with soil, faeces or saliva, and puncture, avulsion, crush, burn and frostbite wounds, need a booster if it has been 5 years since the last dose
 - Evidence: B
 - Sources: US Centers for Disease Control and Prevention. Tetanus: "Tetanus bacteria can get into someone's body through broken skin, usually through injuries." "Tetanus can lead to death (1 in 10 cases in the United States are fatal)." "People who didn't complete the primary series or who aren't up to date with their 10-year tetanus booster shots are also at increased risk." "Vaccination also helps prevent tetanus in people with wounds, depending on their tetanus vaccination history." <https://www.cdc.gov/tetanus/about/index.html>；CDC. Pink Book Chapter 21: Tetanus (wound management table): "Yes, if ≥5 years since the last tetanus toxoid-containing vaccine dose". <https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-21-tetanus.html>
@@ -90,9 +90,9 @@ In Japan, far more older people die from accidents at home than on the road: amo
 
 ### 9. Women over 30 should have cervical cancer screening, preferably an HPV test
 <!-- 成本标签: 钱=少 时间=少 毅力=否 收益=大 口径=死亡率 -->
-<!-- zh: 30 岁以上女性做宫颈癌筛查，优先 HPV 检测 | 1df58a28 -->
+<!-- zh: 30 岁以上女性做宫颈癌筛查，优先 HPV 检测 | 5f70f0e5 -->
 - Cost: Municipal cervical cancer screening is publicly subsidized. If the result is negative, once every 5 years is enough. Taking the sample takes a few minutes.
-- In plain words: In the trial in rural India, women who had just one HPV test in their lives were about half as likely to die of cervical cancer. They were also about 50% less likely to be diagnosed with advanced cervical cancer. One test costs one or two hundred yuan, and a negative result covers 5 years.
+- In plain words: In the trial in rural India, women who had just one HPV test in their lives were about half as likely to die of cervical cancer. They were also about 50% less likely to be diagnosed with advanced cervical cancer. Municipal screening is subsidised, and a negative result covers 5 years.
 - Benefit: The rural India trial randomized by community, not by individual. Participants were women aged 30 to 59. Screening with a single HPV test lowered the risk of dying of cervical cancer by about 48%. The original figure is HR 0.52, with confidence range 95% CI 0.33 to 0.83. The risk of advanced cervical cancer was about 53% lower (HR 0.47, 95% CI 0.32 to 0.69)
 - Evidence: A
 - Sources: Sankaranarayanan R, et al. (2009). HPV screening for cervical cancer in rural India. New England Journal of Medicine. <https://doi.org/10.1056/NEJMoa0808516>；国立がん研究センター がん情報サービス. 子宮頸がん検診について. <https://ganjoho.jp/public/pre_scr/screening/cervix_uteri.html>
@@ -180,9 +180,9 @@ In Japan, far more older people die from accidents at home than on the road: amo
 
 ### 18. Get tested for Helicobacter pylori, and if positive, have it eradicated
 <!-- 成本标签: 钱=少 时间=少 毅力=些 收益=大 口径=死亡率 -->
-<!-- zh: 查幽门螺杆菌，阳性就根除 | 0872f087 -->
+<!-- zh: 查幽门螺杆菌，阳性就根除 | 85d07f02 -->
 - Cost: One breath test, and eradication means taking several drugs at once, both partly self-paid. The hard part is taking the two weeks of medicine on time to the end.
-- In plain words: In the Linqu, Shandong trial followed for 22 years, people who had H. pylori eradicated were about half as likely to develop stomach cancer later. About 40% less likely to die of stomach cancer. One test costs one or two hundred yuan, and eradication means two weeks of medicine.
+- In plain words: In the Linqu, Shandong trial followed for 22 years, people who had H. pylori eradicated were about half as likely to develop stomach cancer later. About 40% less likely to die of stomach cancer. One test tells you, and eradication means taking the full two weeks of medicine on schedule.
 - Benefit: The randomized trial in Linqu, Shandong followed people for 22 years. Those who had H. pylori eradication treatment had about half the risk of stomach cancer. The original figure is OR 0.48, confidence range 95% CI 0.32 to 0.71. The risk of dying of stomach cancer was about 38% lower (HR 0.62, 95% CI 0.39 to 0.99)
 - Evidence: A
 - Sources: Li WQ, et al. (2019). Effects of Helicobacter pylori treatment and vitamin and garlic supplementation on gastric cancer incidence and mortality: follow-up of a randomized intervention trial. BMJ. <https://doi.org/10.1136/bmj.l5016>
@@ -260,9 +260,9 @@ In Japan, far more older people die from accidents at home than on the road: amo
 
 ### 26. After 35, if you are overweight, get your fasting blood sugar tested, and if normal, retest every three years
 <!-- 成本标签: 钱=少 时间=少 毅力=否 收益=中 口径=死亡率 -->
-<!-- zh: 35 岁以后只要超重，就去查一次空腹血糖，正常也每三年再查 | 1e2d4103 -->
+<!-- zh: 35 岁以后只要超重，就去查一次空腹血糖，正常也每三年再查 | f7c3fcde -->
 - Cost: Just one blood draw at a clinic. People 40 and over also have specific health checkups arranged by their insurer.
-- In plain words: For a few dozen yuan, one blood test can find prediabetes before you have any symptoms at all. The official US screening recommendation is: people aged 35 to 70 who are overweight or obese should be tested. If normal, test again every three years. The US counts a body mass index of 25 as overweight, lowered to 23 for Asians.
+- In plain words: One blood test can find prediabetes before you have any symptoms at all. The official US screening recommendation is: people aged 35 to 70 who are overweight or obese should be tested. If normal, test again every three years. The US counts a body mass index of 25 as overweight, lowered to 23 for Asians.
 - Benefit: The US Preventive Services Task Force is the official US body making screening recommendations. Its current recommendation: screen adults aged 35 to 70 who are overweight or obese for prediabetes and type 2 diabetes, even with no symptoms at all. Overweight means a body mass index ≥25, obese ≥30. For Asian Americans, it considers a lower cut-off of body mass index ≥23 may be more appropriate. The recommendation is grade B. It also states: "for adults with normal blood glucose, screening every 3 years is a reasonable approach"
 - Evidence: A
 - Sources: US Preventive Services Task Force (2021). Screening for Prediabetes and Type 2 Diabetes. <https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/screening-for-prediabetes-and-type-2-diabetes>: "Data suggest that a BMI of 23 or greater may be an appropriate cut point in Asian American persons."
@@ -310,9 +310,9 @@ In Japan, far more older people die from accidents at home than on the road: amo
 
 ### 31. From 45 to 50, start colorectal cancer screening, with a faecal immunochemical test for blood in the stool or a colonoscopy
 <!-- 成本标签: 钱=少 时间=中 毅力=否 收益=中 口径=死亡率 -->
-<!-- zh: 45 到 50 岁起做结直肠癌筛查，做查大便隐血的粪便免疫化学检测或者肠镜 | fef6aa1d -->
+<!-- zh: 45 到 50 岁起做结直肠癌筛查，做查大便隐血的粪便免疫化学检测或者肠镜 | 6aa487f8 -->
 - Cost: Stool tests are publicly subsidized in municipal screening, done once a year in Japan. Colonoscopy is partly self-paid, and if negative, once every 10 years is enough. Set aside a day for bowel preparation before a colonoscopy.
-- In plain words: A faecal occult blood test costing a few dozen yuan every one or two years lowers the chance of dying of colorectal cancer by about 16%, and by 25% for those who had at least one round. People invited for one colonoscopy saw their chance of colorectal cancer over the next ten years fall from 1.20% to 0.98%.
+- In plain words: A faecal occult blood test every one or two years lowers the chance of dying of colorectal cancer by about 16%, and by 25% for those who had at least one round. People invited for one colonoscopy saw their chance of colorectal cancer over the next ten years fall from 1.20% to 0.98%.
 - Benefit: Cochrane pooled several studies. People screened with faecal occult blood tests had about 16% lower risk of dying of colorectal cancer. The original figure is RR 0.84, confidence range 95% CI 0.78 to 0.90. People who took part in at least one round were about 25% lower (RR 0.75). Now the NordICC randomized trial. Among people invited for colonoscopy, colorectal cancer incidence over 10 years fell from 1.20% to 0.98%. The original figure is RR 0.82, confidence range 95% CI 0.70 to 0.93
 - Evidence: A
 - Sources: Hewitson P, et al. (2007). Screening for colorectal cancer using the faecal occult blood test, Hemoccult. Cochrane Database of Systematic Reviews. <https://doi.org/10.1002/14651858.CD001216.pub2> ; Bretthauer M, et al. (2022). Effect of Colonoscopy Screening on Risks of Colorectal Cancer and Related Death. New England Journal of Medicine. <https://doi.org/10.1056/NEJMoa2208375>；国立がん研究センター がん情報サービス. 大腸がん検診について. <https://ganjoho.jp/public/pre_scr/screening/colon.html>

@@ -1,6 +1,6 @@
 <!-- lang:start 这一段由 node tools/sync-stats.mjs 从 README.en.md、README.ja.md 生成，别手改 -->
 <details>
-<summary><img alt="English" src="https://img.shields.io/badge/English-1f6feb?style=for-the-badge&logo=googletranslate&logoColor=white" height="32" align="absmiddle">&nbsp; <b>English</b> · A practical, evidence-graded guide for foreigners living in Japan. <b>Click to read it here.</b></summary>
+<summary>🌐 <b>English</b> · A practical, evidence-graded guide for foreigners living in Japan. <b>▸ Click here to read it in English</b></summary>
 
 <div align="center">
 
@@ -150,7 +150,7 @@ If you share or adapt this book, credit "在日本的高性价比生活指南" w
 </details>
 
 <details>
-<summary><img alt="日本語" src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9E-18794e?style=for-the-badge&logo=googletranslate&logoColor=white" height="32" align="absmiddle">&nbsp; <b>日本語</b> · 日本で暮らす外国人のための実用ガイド。<b>クリックするとここで読めます。</b></summary>
+<summary>🌐 <b>日本語</b> · 日本で暮らす外国人のための実用ガイド。<b>▸ ここをクリックすると日本語で読めます</b></summary>
 
 <div align="center">
 

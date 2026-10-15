@@ -144,8 +144,8 @@ for (const [file, label, pattern, repl] of EDITS) {
 // （2026-10-15 维护者要求）。GitHub 会去掉 README 里的脚本，原地切换只能靠 <details>。
 // 块里的内容取自 README.en.md、README.ja.md 从封面图那行起的全文，所以要在那两份的数字和封面版本号都改好之后再生成
 const LANG_BLOCKS = [
-  ['README.en.md', 'English', '1f6feb', '<b>English</b> · A practical, evidence-graded guide for foreigners living in Japan. <b>Click to read it here.</b>'],
-  ['README.ja.md', '日本語', '18794e', '<b>日本語</b> · 日本で暮らす外国人のための実用ガイド。<b>クリックするとここで読めます。</b>'],
+  ['README.en.md', 'English', '1f6feb', '<b>English</b> · A practical, evidence-graded guide for foreigners living in Japan. <b>▸ Click here to read it in English</b>'],
+  ['README.ja.md', '日本語', '18794e', '<b>日本語</b> · 日本で暮らす外国人のための実用ガイド。<b>▸ ここをクリックすると日本語で読めます</b>'],
 ];
 function langBlock(){
   const out = [];
@@ -153,8 +153,8 @@ function langBlock(){
     const text = read(md);
     const at = text.search(/^<img src="og\./m);
     if (at < 0) throw new Error(`${md} 里找不到封面图那一行，折叠块没法生成`);
-    const badge = `https://img.shields.io/badge/${encodeURIComponent(label)}-${color}?style=for-the-badge&logo=googletranslate&logoColor=white`;
-    out.push(`<details>\n<summary><img alt="${label}" src="${badge}" height="32" align="absmiddle">&nbsp; ${summary}</summary>\n\n<div align="center">\n\n${text.slice(at).trim()}\n\n</details>\n`);
+    // 标题里不能放图片：GitHub 会给 README 里的图片套上「打开原图」的链接，点按钮就跳走了，展不开（2026-10-15 撞到）
+    out.push(`<details>\n<summary>🌐 ${summary}</summary>\n\n<div align="center">\n\n${text.slice(at).trim()}\n\n</details>\n`);
   }
   return out.join('\n');
 }

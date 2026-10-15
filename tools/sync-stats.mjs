@@ -25,6 +25,7 @@ import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
+import { createHash } from 'node:crypto';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -140,6 +141,23 @@ for (const [file, label, pattern, repl] of EDITS) {
   console.log(`  ${file} ${label}：${old} -> ${CHECK ? '过时' : `已更新（${found.length} 处）`}`);
 }
 
+// README 里的封面图带 ?v=图片指纹：GitHub 和浏览器按地址缓存图片，文件名不变就一直显示旧图（2026-10-15 换封面时撞到）。
+// 指纹取 png 内容的 sha1 前 7 位，出完图由下面的 coverRefs() 改写；--check 时比对，对不上算过时
+const COVERS = [['README.md', 'og.png'], ['README.en.md', 'og.en.png'], ['README.ja.md', 'og.ja.png']];
+function coverRefs(write){
+  const bad = [];
+  for (const [md, png] of COVERS){
+    const v = createHash('sha1').update(readFileSync(join(ROOT, png))).digest('hex').slice(0, 7);
+    const text = read(md);
+    const re = new RegExp(`src="${png.replace('.', '\\.')}(\\?v=[0-9a-f]+)?"`);
+    if (!re.test(text)) throw new Error(`${md} 里找不到封面图 ${png}`);
+    const next = text.replace(re, `src="${png}?v=${v}"`);
+    if (next !== text){ bad.push(`${md} 封面图版本号`); if (write) writeFileSync(join(ROOT, md), next); }
+  }
+  return bad;
+}
+if (CHECK) stale.push(...coverRefs(false));
+
 if (CHECK) {
   if (stale.length === 0) {
     console.log('\n统计数字检查通过');
@@ -206,3 +224,4 @@ for (const [srcHtml, out] of [['og.html', 'og.png'], ['og.en.html', 'og.en.png']
   console.log(`${out} 已重出：${png.size} 字节，自检通过。`);
 }
 console.log('改过 tools/og*.html 的版式才需要打开图确认。');
+for (const b of coverRefs(true)) console.log(`已更新 ${b}`);

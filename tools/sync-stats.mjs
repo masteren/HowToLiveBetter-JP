@@ -99,6 +99,10 @@ const EDITS = [
   ['README.md', '性价比段', /全书 (\d+) 条中性价比极高 \d+ 条（\d+%）、高 \d+ 条（\d+%）、一般 \d+ 条（\d+%）/g,
     `全书 ${entries} 条中性价比极高 ${ratio['极高']} 条（${pct['极高']}%）、高 ${ratio['高']} 条（${pct['高']}%）、一般 ${ratio['一般']} 条（${pct['一般']}%）`],
   ['README.md', '正文文件数', /正文按节拆成 (\d+) 个文件/g, `正文按节拆成 ${sections} 个文件`],
+  // 封面图上只放条目数一个数字，三种语言各一处
+  ['tools/og.html', 'og 条目数', /在日本生活的 <b>(\d+)<\/b> 个决定/g, `在日本生活的 <b>${entries}</b> 个决定`],
+  ['tools/og.en.html', 'og 英文条目数', /<b>(\d+)<\/b> evidence-graded decisions/g, `<b>${entries}</b> evidence-graded decisions`],
+  ['tools/og.ja.html', 'og 日文条目数', /日本で暮らすための <b>(\d+)<\/b> の判断/g, `日本で暮らすための <b>${entries}</b> の判断`],
   ['README.md', '首屏英文条目数', /(\d+) entries, each with its cost/g, `${entries} entries, each with its cost`],
   ['README.md', '节数徽章', /%E6%AD%A3%E6%96%87-(\d+)%20%E8%8A%82/g, `%E6%AD%A3%E6%96%87-${sections}%20%E8%8A%82`],
   // 英文和日文导读页只有首屏和徽章带数字，正文仍是中文
@@ -116,15 +120,6 @@ const EDITS = [
   ['index.html', 'numberOfPages', /numberOfPages":(\d+)/g, `numberOfPages":${entries}`],
   ['index.html', '页头条目数', /\d+ 节 (\d+) 条/g, `${sections} 节 ${entries} 条`],
   ['index.html', '页脚文件数', /下的 (\d+) 个文件/g, `下的 ${sections} 个文件`],
-  ['tools/og.html', 'og 条目数', /<b>(\d+)<\/b> 条建议/g, `<b>${entries}</b> 条建议`],
-  ['tools/og.html', 'og A 级数', /A 级证据 <b>(\d+)<\/b> 条/g, `A 级证据 <b>${grade.A}</b> 条`],
-  ['tools/og.html', 'og 链接数', /<b>(\d+)<\/b> 条原始文献链接/g, `<b>${links}</b> 条原始文献链接`],
-  ['tools/og.en.html', 'og 英文条目数', /<b>(\d+)<\/b> tips/g, `<b>${entries}</b> tips`],
-  ['tools/og.en.html', 'og 英文 A 级数', /<b>(\d+)<\/b> backed by grade-A/g, `<b>${grade.A}</b> backed by grade-A`],
-  ['tools/og.en.html', 'og 英文链接数', /<b>(\d+)<\/b> primary-source links/g, `<b>${links}</b> primary-source links`],
-  ['tools/og.ja.html', 'og 日文条目数', /<b>(\d+)<\/b> 項目の助言/g, `<b>${entries}</b> 項目の助言`],
-  ['tools/og.ja.html', 'og 日文 A 级数', /エビデンスA <b>(\d+)<\/b> 件/g, `エビデンスA <b>${grade.A}</b> 件`],
-  ['tools/og.ja.html', 'og 日文链接数', /<b>(\d+)<\/b> 件の一次資料リンク/g, `<b>${links}</b> 件の一次資料リンク`],
 ];
 
 const texts = new Map();

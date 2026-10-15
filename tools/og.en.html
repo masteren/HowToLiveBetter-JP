@@ -2,39 +2,55 @@
 <!doctype html><meta charset="utf-8">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1200px;height:630px;font-family:"Helvetica Neue","Segoe UI",Arial,sans-serif;
-  background:#fff;position:relative;overflow:hidden}
-.bg{position:absolute;inset:0;
-  background:radial-gradient(700px 420px at 88% 8%, rgba(100,108,255,.16), transparent 70%),
-             radial-gradient(560px 380px at 4% 100%, rgba(16,185,129,.12), transparent 70%)}
-.grid{position:absolute;inset:0;opacity:.5;
-  background-image:linear-gradient(#eceded 1px,transparent 1px),linear-gradient(90deg,#eceded 1px,transparent 1px);
-  background-size:48px 48px;
-  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.55),transparent 78%)}
-.in{position:relative;padding:76px 84px;height:100%;display:flex;flex-direction:column}
-.brand{display:flex;align-items:center;gap:14px;font-size:23px;color:#3c3c43b8;font-weight:600;letter-spacing:.02em}
-.logo{width:44px;height:44px;border-radius:11px;background:#3451b2;color:#fff;font-size:26px;font-weight:700;
-  display:flex;align-items:center;justify-content:center}
-.logo svg{width:28px;height:28px}
-h1{margin-top:52px;font-size:74px;line-height:1.12;letter-spacing:-.02em;color:#1b1b1f;font-weight:700}
-h1 em{font-style:normal;color:#3451b2}
-p{margin-top:26px;font-size:25px;white-space:nowrap;line-height:1.6;color:#3c3c43c7;max-width:960px}
-.chips{margin-top:auto;margin-bottom:8px;display:flex;gap:12px;flex-wrap:wrap}
-.c{font-size:21px;font-weight:600;padding:11px 18px;border-radius:999px;background:#f6f6f7;color:#3c3c43c7;border:1px solid #e2e2e3}
-.c b{color:#1b1b1f}
-.c.a{background:rgba(16,185,129,.12);border-color:transparent;color:#18794e}
-.c.u{background:rgba(100,108,255,.14);border-color:transparent;color:#3451b2}
-.bar{position:absolute;left:0;top:0;width:100%;height:8px;background:linear-gradient(90deg,#3451b2,#5672cd 45%,#18794e)}
+body{width:1200px;height:630px;font-family:"Helvetica Neue","Segoe UI",Arial,sans-serif;position:relative;overflow:hidden;color:#e8ecf4;
+  background:radial-gradient(760px 520px at 85% 10%,#2a3a8f 0%,transparent 62%),radial-gradient(620px 460px at 0% 100%,#0f5c45 0%,transparent 65%),#0b1020}
+.grid{position:absolute;inset:0;opacity:.18;background-image:linear-gradient(#8aa0ff22 1px,transparent 1px),linear-gradient(90deg,#8aa0ff22 1px,transparent 1px);background-size:40px 40px}
+.in{position:relative;height:100%;padding:64px 70px 56px;display:grid;grid-template-columns:1fr 430px;gap:40px}
+.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:600;color:#aab4d4;letter-spacing:.02em}
+.logo{width:38px;height:38px;border-radius:10px;background:#4c6ef5;color:#fff;display:flex;align-items:center;justify-content:center}
+.logo svg{width:24px;height:24px}
+h1{margin-top:58px;font-size:58px;line-height:1.14;font-weight:800;letter-spacing:-.01em}
+h1 .a{display:block;color:#fff}
+h1 .b{display:block;background:linear-gradient(90deg,#7c9cff,#5eead4);-webkit-background-clip:text;color:transparent}
+.sub{margin-top:24px;font-size:26px;color:#b8c2de;line-height:1.5}
+.sub b{color:#fff}
+.icons{position:absolute;left:70px;bottom:52px;display:flex;gap:14px}
+.ic{width:52px;height:52px;border-radius:14px;background:#ffffff10;border:1px solid #ffffff1f;display:flex;align-items:center;justify-content:center}
+.ic svg{width:26px;height:26px;fill:none;stroke:#c9d3f5;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.stack{position:relative;align-self:start;margin-top:84px}
+.c{position:absolute;left:0;right:0;border-radius:18px;background:#141b33;border:1px solid #ffffff22;box-shadow:0 20px 50px #00000066}
+.c.back2{top:0;height:100%;transform:rotate(6deg) translate(26px,18px);opacity:.4}
+.c.back1{top:0;height:100%;transform:rotate(3deg) translate(12px,8px);opacity:.7}
+.c.front{position:relative;padding:24px 26px;background:linear-gradient(180deg,#1b2447,#141b33)}
+.ct{display:flex;gap:12px;align-items:flex-start;font-size:20px;font-weight:700;line-height:1.35;color:#fff}
+.n{color:#7c9cff;font-weight:700}
+.bd{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.bd span{font-size:14px;font-weight:600;padding:5px 11px;border-radius:999px;background:#ffffff14;color:#c9d3f5}
+.bd .g{background:#10b98126;color:#6ee7b7} .bd .u{background:#4c6ef533;color:#a5b8ff}
+.rows{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:10px 14px;font-size:16px;align-items:center}
+.k{color:#8792b5}
+.bar{height:10px;border-radius:99px;background:#ffffff14;position:relative;overflow:hidden}
+.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:99px}
+.v{color:#e8ecf4;font-weight:600}
 </style>
-<div class="bg"></div><div class="grid"></div><div class="bar"></div>
+<div class="grid"></div>
 <div class="in">
-  <div class="brand"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A Cost-Effective Guide to Living in Japan</div>
-  <h1>For foreigners living in Japan:<br><em>fewer detours, no legal traps</em></h1>
-  <p>Visas · Tax &amp; pension · Healthcare · Emergencies · Scams · Legal red lines · Work · Housing</p>
-  <div class="chips">
-    <div class="c u"><b>349</b> tips</div>
-    <div class="c a"><b>221</b> backed by grade-A evidence</div>
-    <div class="c"><b>686</b> primary-source links</div>
-    <div class="c">中文 + English</div>
+  <div>
+    <div class="brand"><span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>A Cost-Effective Guide to Living in Japan</div>
+    <h1><span class="a">What it costs.</span><span class="b">What you get back.</span></h1>
+    <p class="sub"><b>349</b> evidence-graded decisions<br>for foreigners living in Japan</p>
+  </div>
+  <div class="stack">
+    <div class="c back2"></div><div class="c back1"></div>
+    <div class="c front">
+      <div class="ct"><span class="n">#1</span><span>Wear a seatbelt, front and back</span></div>
+      <div class="bd"><span class="u">Value: Top</span><span class="g">Evidence A</span><span>Buys life</span></div>
+      <div class="rows">
+        <span class="k">Cost</span><span class="v">2 seconds</span>
+        <span class="k">Benefit</span><div class="bar"><i style="width:55%;background:linear-gradient(90deg,#5eead4,#7c9cff)"></i></div>
+        <span class="k"></span><span class="v">Fatal injury risk −45%</span>
+      </div>
+    </div>
   </div>
 </div>
+<div class="icons"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5.5 16c.6-1.6 1.8-2.4 3-2.4s2.4.8 3 2.4M14 9.5h4.5M14 12.5h4.5M14 15.5h3"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 7l3.5 5 3.5-5M12 12v5.5M9 13h6M9 15.5h6"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 7.5v9M7.5 12h9"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 3.5 10 2.5-7 1.5 2H21"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6z"/><path d="M8.8 12.2l2.2 2.2 4.3-4.6"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 7h14M7 7l-3 6.5a3 3 0 0 0 6 0zM17 7l-3 6.5a3 3 0 0 0 6 0z"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12.5" rx="2.5"/><path d="M8.5 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5v2M3 12.5h18"/></svg></span><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5M6 9.5V20h12V9.5M10 20v-5h4v5"/></svg></span></div>

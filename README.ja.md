@@ -1,8 +1,10 @@
 <div align="center">
 
-[简体中文](README.md) · [English](README.en.md) · **日本語**
+<a href="README.md"><img alt="简体中文" src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-24292f?style=for-the-badge&logo=googletranslate&logoColor=white" height="40"></a>
+<a href="README.en.md"><img alt="English" src="https://img.shields.io/badge/English-24292f?style=for-the-badge&logo=googletranslate&logoColor=white" height="40"></a>
+<a href="README.ja.md"><img alt="日本語" src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9E-1f6feb?style=for-the-badge&logo=googletranslate&logoColor=white" height="40"></a>
 
-<img src="og.png" alt="日本で暮らす外国人のためのコスパ生活ガイド" width="820">
+<img src="og.ja.png" alt="日本で暮らす外国人のためのコスパ生活ガイド" width="820">
 
 # 日本で暮らす外国人のためのコスパ生活ガイド
 

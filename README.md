@@ -1,6 +1,12 @@
 <div align="center">
 
-**简体中文** · [English](README.en.md) · [日本語](README.ja.md)
+<a href="README.md"><img alt="简体中文" src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-1f6feb?style=for-the-badge&logo=googletranslate&logoColor=white" height="40"></a>
+<a href="README.en.md"><img alt="English" src="https://img.shields.io/badge/English-24292f?style=for-the-badge&logo=googletranslate&logoColor=white" height="40"></a>
+<a href="README.ja.md"><img alt="日本語" src="https://img.shields.io/badge/%E6%97%A5%E6%9C%AC%E8%AA%9E-24292f?style=for-the-badge&logo=googletranslate&logoColor=white" height="40"></a>
+
+**English:** a practical, evidence-graded guide for foreigners living in Japan: visas, tax and pension, healthcare, emergencies, scams and legal red lines. 349 entries, each with its cost, benefit, evidence grade and primary sources. **[Read it in English →](README.en.md)**
+
+**日本語：** 日本で暮らす外国人のための実用ガイド。在留資格、税金と年金、医療、救急、詐欺、法律の一線。**[日本語の案内 →](README.ja.md)**
 
 <img src="og.png" alt="在日本的高性价比生活指南 —— 写给在日本生活的外国人" width="820">
 

@@ -2,7 +2,7 @@
 // ① 重算全书的统计数字，回写 README.md（含英日两份导读页）、index.html、tools/og.html；
 // ② 调 check-refs.mjs 重算 docs/引用对照.md，再调 check-en.mjs 让英文译本跟上中文的顺序；
 // ③ 调 check-plain.mjs 查说人话，不合格只提示不中断；
-// ④ 用无头 Chrome 把 tools/og.html 重新截成 og.png。
+// ④ 用无头 Chrome 把 tools/og.html、og.en.html、og.ja.html 重新截成 og.png、og.en.png、og.ja.png。
 //
 //   node tools/sync-stats.mjs                   # 全做
 //   node tools/sync-stats.mjs --no-screenshot   # 不截图
@@ -99,6 +99,7 @@ const EDITS = [
   ['README.md', '性价比段', /全书 (\d+) 条中性价比极高 \d+ 条（\d+%）、高 \d+ 条（\d+%）、一般 \d+ 条（\d+%）/g,
     `全书 ${entries} 条中性价比极高 ${ratio['极高']} 条（${pct['极高']}%）、高 ${ratio['高']} 条（${pct['高']}%）、一般 ${ratio['一般']} 条（${pct['一般']}%）`],
   ['README.md', '正文文件数', /正文按节拆成 (\d+) 个文件/g, `正文按节拆成 ${sections} 个文件`],
+  ['README.md', '首屏英文条目数', /(\d+) entries, each with its cost/g, `${entries} entries, each with its cost`],
   ['README.md', '节数徽章', /%E6%AD%A3%E6%96%87-(\d+)%20%E8%8A%82/g, `%E6%AD%A3%E6%96%87-${sections}%20%E8%8A%82`],
   // 英文和日文导读页只有首屏和徽章带数字，正文仍是中文
   ['README.en.md', '首屏条目数', /(\d+) pieces of advice across \d+ sections/g, `${entries} pieces of advice across ${sections} sections`],
@@ -118,6 +119,12 @@ const EDITS = [
   ['tools/og.html', 'og 条目数', /<b>(\d+)<\/b> 条建议/g, `<b>${entries}</b> 条建议`],
   ['tools/og.html', 'og A 级数', /A 级证据 <b>(\d+)<\/b> 条/g, `A 级证据 <b>${grade.A}</b> 条`],
   ['tools/og.html', 'og 链接数', /<b>(\d+)<\/b> 条原始文献链接/g, `<b>${links}</b> 条原始文献链接`],
+  ['tools/og.en.html', 'og 英文条目数', /<b>(\d+)<\/b> tips/g, `<b>${entries}</b> tips`],
+  ['tools/og.en.html', 'og 英文 A 级数', /<b>(\d+)<\/b> backed by grade-A/g, `<b>${grade.A}</b> backed by grade-A`],
+  ['tools/og.en.html', 'og 英文链接数', /<b>(\d+)<\/b> primary-source links/g, `<b>${links}</b> primary-source links`],
+  ['tools/og.ja.html', 'og 日文条目数', /<b>(\d+)<\/b> 項目の助言/g, `<b>${entries}</b> 項目の助言`],
+  ['tools/og.ja.html', 'og 日文 A 级数', /エビデンスA <b>(\d+)<\/b> 件/g, `エビデンスA <b>${grade.A}</b> 件`],
+  ['tools/og.ja.html', 'og 日文链接数', /<b>(\d+)<\/b> 件の一次資料リンク/g, `<b>${links}</b> 件の一次資料リンク`],
 ];
 
 const texts = new Map();
@@ -182,21 +189,25 @@ const CHROME_PATHS = [
 const chrome = CHROME_PATHS.find(p => p && existsSync(p));
 if (!chrome) throw new Error('找不到 Chrome，设环境变量 CHROME 指到它，或者加 --no-screenshot 跳过截图');
 
+// 三张封面图：中文 og.png 给 README.md 和社交分享，英文、日文各一张给 README.en.md、README.ja.md。
 // 每次用全新的 user-data-dir：否则 Chrome 会拿缓存里的旧 og.html 渲染，截出来还是旧数字。
 // --screenshot 必须给绝对路径：给相对路径 Chrome 什么都不写，还照样返回 0
-const profile = mkdtempSync(join(tmpdir(), 'og-shot-'));
-const target = join(ROOT, 'og.png');
-const startedAt = Date.now();
-// Chrome 把「xxx bytes written」这类信息写在 stderr 上，不是报错，直接丢掉
-spawnSync(chrome, [
-  '--headless', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
-  '--window-size=1200,630', `--user-data-dir=${profile}`, `--screenshot=${target}`,
-  pathToFileURL(join(ROOT, 'tools', 'og.html')).href,
-], { stdio: 'ignore' });
-rmSync(profile, { recursive: true, force: true });
+for (const [srcHtml, out] of [['og.html', 'og.png'], ['og.en.html', 'og.en.png'], ['og.ja.html', 'og.ja.png']]){
+  const profile = mkdtempSync(join(tmpdir(), 'og-shot-'));
+  const target = join(ROOT, out);
+  const startedAt = Date.now();
+  // Chrome 把「xxx bytes written」这类信息写在 stderr 上，不是报错，直接丢掉
+  spawnSync(chrome, [
+    '--headless', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
+    '--window-size=1200,630', `--user-data-dir=${profile}`, `--screenshot=${target}`,
+    pathToFileURL(join(ROOT, 'tools', srcHtml)).href,
+  ], { stdio: 'ignore' });
+  rmSync(profile, { recursive: true, force: true });
 
-// 自检：文件是这次写的、大小在正常区间。过了这两关就不必再打开图看，省一次读图的开销
-const png = statSync(target);
-if (png.mtimeMs < startedAt - 1000) throw new Error('og.png 没有被这次运行写入，截图失败了');
-if (png.size < 120 * 1024 || png.size > 400 * 1024) throw new Error(`og.png 大小异常（${png.size} 字节），正常在 120KB 到 400KB，打开看一眼是不是渲染坏了`);
-console.log(`\nog.png 已重出：${png.size} 字节，自检通过。改过 tools/og.html 的版式才需要打开图确认。`);
+  // 自检：文件是这次写的、大小在正常区间。过了这两关就不必再打开图看，省一次读图的开销
+  const png = statSync(target);
+  if (png.mtimeMs < startedAt - 1000) throw new Error(`${out} 没有被这次运行写入，截图失败了`);
+  if (png.size < 120 * 1024 || png.size > 400 * 1024) throw new Error(`${out} 大小异常（${png.size} 字节），正常在 120KB 到 400KB，打开看一眼是不是渲染坏了`);
+  console.log(`${out} 已重出：${png.size} 字节，自检通过。`);
+}
+console.log('改过 tools/og*.html 的版式才需要打开图确认。');

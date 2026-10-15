@@ -104,7 +104,6 @@ const EDITS = [
   ['tools/og.html', 'og 条目数', /在日本生活的 <b>(\d+)<\/b> 个决定/g, `在日本生活的 <b>${entries}</b> 个决定`],
   ['tools/og.en.html', 'og 英文条目数', /<b>(\d+)<\/b> evidence-graded decisions/g, `<b>${entries}</b> evidence-graded decisions`],
   ['tools/og.ja.html', 'og 日文条目数', /日本で暮らすための <b>(\d+)<\/b> の判断/g, `日本で暮らすための <b>${entries}</b> の判断`],
-  ['README.md', '首屏英文条目数', /(\d+) entries, each with its cost/g, `${entries} entries, each with its cost`],
   ['README.md', '节数徽章', /%E6%AD%A3%E6%96%87-(\d+)%20%E8%8A%82/g, `%E6%AD%A3%E6%96%87-${sections}%20%E8%8A%82`],
   // 英文和日文导读页只有首屏和徽章带数字，正文仍是中文
   ['README.en.md', '首屏条目数', /(\d+) pieces of advice across \d+ sections/g, `${entries} pieces of advice across ${sections} sections`],
@@ -141,6 +140,34 @@ for (const [file, label, pattern, repl] of EDITS) {
   console.log(`  ${file} ${label}：${old} -> ${CHECK ? '过时' : `已更新（${found.length} 处）`}`);
 }
 
+// 中文 README 顶部的「English」「日本語」两个折叠块：点开就在原地读英文、日文导读，不跳到另一个文件
+// （2026-10-15 维护者要求）。GitHub 会去掉 README 里的脚本，原地切换只能靠 <details>。
+// 块里的内容取自 README.en.md、README.ja.md 从封面图那行起的全文，所以要在那两份的数字和封面版本号都改好之后再生成
+const LANG_BLOCKS = [
+  ['README.en.md', 'English', '1f6feb', '<b>English</b> · A practical, evidence-graded guide for foreigners living in Japan. <b>Click to read it here.</b>'],
+  ['README.ja.md', '日本語', '18794e', '<b>日本語</b> · 日本で暮らす外国人のための実用ガイド。<b>クリックするとここで読めます。</b>'],
+];
+function langBlock(){
+  const out = [];
+  for (const [md, label, color, summary] of LANG_BLOCKS){
+    const text = read(md);
+    const at = text.search(/^<img src="og\./m);
+    if (at < 0) throw new Error(`${md} 里找不到封面图那一行，折叠块没法生成`);
+    const badge = `https://img.shields.io/badge/${encodeURIComponent(label)}-${color}?style=for-the-badge&logo=googletranslate&logoColor=white`;
+    out.push(`<details>\n<summary><img alt="${label}" src="${badge}" height="32" align="absmiddle">&nbsp; ${summary}</summary>\n\n<div align="center">\n\n${text.slice(at).trim()}\n\n</details>\n`);
+  }
+  return out.join('\n');
+}
+function embedLangs(write){
+  const text = read('README.md');
+  const re = /(<!-- lang:start[^\n]*-->\n)[\s\S]*?(<!-- lang:end -->)/;
+  if (!re.test(text)) throw new Error('README.md 里找不到 lang:start / lang:end 标记');
+  const next = text.replace(re, (m, a, b) => a + langBlock() + b);
+  if (next === text) return [];
+  if (write) writeFileSync(join(ROOT, 'README.md'), next);
+  return ['README.md 的英文、日文折叠块'];
+}
+
 // README 里的封面图带 ?v=图片指纹：GitHub 和浏览器按地址缓存图片，文件名不变就一直显示旧图（2026-10-15 换封面时撞到）。
 // 指纹取 png 内容的 sha1 前 7 位，出完图由下面的 coverRefs() 改写；--check 时比对，对不上算过时
 const COVERS = [['README.md', 'og.png'], ['README.en.md', 'og.en.png'], ['README.ja.md', 'og.ja.png']];
@@ -156,7 +183,7 @@ function coverRefs(write){
   }
   return bad;
 }
-if (CHECK) stale.push(...coverRefs(false));
+if (CHECK) stale.push(...coverRefs(false), ...embedLangs(false));
 
 if (CHECK) {
   if (stale.length === 0) {
@@ -168,6 +195,7 @@ if (CHECK) {
 }
 
 for (const [file, text] of texts) if (text !== read(file)) writeFileSync(join(ROOT, file), text);
+for (const b of embedLangs(true)) console.log(`  已更新 ${b}`);
 
 // ② 重算交叉引用对照表：插入或删除条目会让后面的「第 X 条」集体错位，而错位后的条号
 // 往往仍在范围内（2026-09-19 第 7 节那 6 处就是），只有把「引用 → 目标标题」摊开入库，
@@ -225,3 +253,4 @@ for (const [srcHtml, out] of [['og.html', 'og.png'], ['og.en.html', 'og.en.png']
 }
 console.log('改过 tools/og*.html 的版式才需要打开图确认。');
 for (const b of coverRefs(true)) console.log(`已更新 ${b}`);
+for (const b of embedLangs(true)) console.log(`已更新 ${b}`);

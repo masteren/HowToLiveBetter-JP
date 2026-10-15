@@ -125,7 +125,7 @@
 - 正文按节放在 `book/NN-节名.md`。每个文件第一行是回总目录的链接，第二行空行，第三行是 `# N. 节名`。
 - README 只放导读、术语表和目录。tools/lib/book.mjs 靠 README 里的固定标题解析结构：`# 在日本的高性价比生活指南`、`## 这本书想回答的问题`、`## 目录`、`## 正文`、`## 读懂数字（术语表）`。改这些标题要同步改 book.mjs 和 index.html。
 - README「这本书想回答的问题」表一节只占一行。
-- README 顶部是三语切换行和 for-the-badge 样式的 HTML 徽章（`<a><img></a>`）。book.mjs 以第一个 `<a href=` 为简介的结尾，徽章前不要再插别的 `<a href=` 段落。加节、删节、改节名时，README.en.md 和 README.ja.md 的目录表要跟着改；三份 README 的数字由 sync-stats.mjs 同步。
+- README.md 最上面是 `<!-- lang:start -->` 到 `<!-- lang:end -->` 之间的英文、日文两个折叠块（`<details>`），点开在原地读导读，不跳页（2026-10-15 维护者要求）。块里的内容由 sync-stats 从 README.en.md、README.ja.md 封面图那行起生成，别手改，改英日导读只改那两个文件。再往下是 for-the-badge 样式的 HTML 徽章（`<a><img></a>`）。README.en.md、README.ja.md 顶部仍是三语跳转按钮。book.mjs 以第一个 `<a href=` 为简介的结尾，徽章前不要再插别的 `<a href=` 段落。加节、删节、改节名时，README.en.md 和 README.ja.md 的目录表要跟着改；三份 README 的数字由 sync-stats.mjs 同步。
 - 新增 docs 长文要挂三处链接：README 末尾的长文清单、README 对应节的目录行、index.html 里 `class="doc-links"` 那一行（URL 要百分号编码）。book.mjs 靠正则 `\]\((docs/[^)#/]+\.md)\)` 从 README 里找长文。
 - 电子版三样（EPUB、PDF、离线单文件 HTML）由 `.github/workflows/book.yml` 在 main 上正文改动后自动生成，挂到 Release `epub-latest`。产物不入库。
 - 不要主动加新节，要加先问维护者。
